@@ -1,2703 +1,1170 @@
-\<!DOCTYPE html>
-
-\<html lang="en">
-
-
-
-\<head>
-
-    \<meta charset="utf-8">
-
-    \<title>CakeZone - Tajinder Singh\</title>
-
-    \<meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    \<meta content="CakeZone, Birthday Cakes, Wedding Cakes, Custom Cakes, Bengaluru" name="keywords">
-
-    \<meta content="CakeZone - Freshly baked birthday, wedding and custom cakes in Bengaluru." name="description">
-
-
-
-    \<!-- Favicon -->
-
-    \<link href="img/favicon.ico" rel="icon">
-
-
-
-    \<!-- Google Web Fonts -->
-
-    \<link rel="preconnect" href="https\://fonts.googleapis.com">
-
-    \<link rel="preconnect" href="https\://fonts.gstatic.com" crossorigin>
-
-    \<link href="https\://fonts.googleapis.com/css2?family=Oswald:wght\@400;500;600;700&family=Pacifico&family=Roboto:wght\@400;500;700&display=swap" rel="stylesheet">
-
-
-
-    \<!-- Icon Font Stylesheet -->
-
-    \<link href="https\://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    \<link href="https\://cdn.jsdelivr.net/npm/bootstrap-icons\@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-
-
-    \<!-- Libraries Stylesheet -->
-
-    \<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    \<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-
-
-    \<!-- Customized Bootstrap Stylesheet -->
-
-    \<link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-
-    \<!-- Template Stylesheet -->
-
-    \<link href="css/style.css" rel="stylesheet">
-
-\
-<style>
-/* =========================================================
-   CakeZone - Mobile & Tablet Responsive Fixes
-   ========================================================= */
-
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-}
-
-@media (max-width: 991.98px) {
-    .navbar-brand h1 {
-        font-size: 28px !important;
-    }
-
-    .navbar-brand .fs-1 {
-        font-size: 28px !important;
-    }
-
-    .navbar-nav {
-        padding-bottom: 10px;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 10px 15px !important;
-    }
-
-    .navbar-nav .bg-primary {
-        margin: 8px 15px !important;
-        padding: 10px 15px !important;
-        text-align: center;
-    }
-
-    .hero-header {
-        min-height: auto !important;
-        padding-top: 70px !important;
-        padding-bottom: 70px !important;
-    }
-
-    .hero-header .display-1 {
-        font-size: 48px !important;
-    }
-
-    .hero-header h1:not(.display-1) {
-        font-size: 25px !important;
-    }
-
-    .hero-header .d-flex {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .hero-header .btn {
-        margin: 0 !important;
-    }
-
-    .section-title h1.display-4 {
-        font-size: 34px !important;
-    }
-
-    .about .row.gx-5 {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .service {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    .team-item img {
-        width: 100%;
-    }
-}
-
-@media (max-width: 767.98px) {
-
-    body {
-        font-size: 15px;
-    }
-
-    /* Top spacing */
-    .container-fluid.pt-5,
-    .container-fluid.py-5 {
-        padding-top: 40px !important;
-        padding-bottom: 40px !important;
-    }
-
-    /* Navbar */
-    .navbar {
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
-    }
-
-    .navbar-brand.ms-lg-5 {
-        margin-left: 0 !important;
-    }
-
-    .navbar-brand h1 {
-        font-size: 24px !important;
-    }
-
-    .navbar-brand .fs-1 {
-        font-size: 24px !important;
-        margin-right: 8px !important;
-    }
-
-    /* Hero */
-    .hero-header {
-        padding: 45px 15px !important;
-        margin-bottom: 30px !important;
-        background-position: center;
-    }
-
-    .hero-header .container {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-    }
-
-    .hero-header .display-1 {
-        font-size: 40px !important;
-        line-height: 1.1 !important;
-        margin-bottom: 15px !important;
-    }
-
-    .hero-header h1.text-uppercase {
-        font-size: 22px !important;
-        line-height: 1.35 !important;
-    }
-
-    .hero-header .font-secondary {
-        font-size: 24px !important;
-    }
-
-    .hero-header .d-flex {
-        flex-direction: column !important;
-        width: 100%;
-        padding-top: 25px !important;
-    }
-
-    .hero-header .btn {
-        width: 100%;
-        margin: 0 !important;
-    }
-
-    /* Section headings */
-    .section-title {
-        max-width: 100% !important;
-        margin-bottom: 30px !important;
-    }
-
-    .section-title h2 {
-        font-size: 25px !important;
-    }
-
-    .section-title h1.display-4 {
-        font-size: 30px !important;
-        line-height: 1.2 !important;
-    }
-
-    /* About */
-    .about .position-relative {
-        min-height: 300px !important;
-    }
-
-    .about img {
-        position: relative !important;
-        height: 300px !important;
-    }
-
-    .about .row.g-5 {
-        --bs-gutter-y: 2rem;
-    }
-
-    /* Facts */
-    .container-fluid.bg-img .row {
-        --bs-gutter-y: 1.5rem;
-    }
-
-    .container-fluid.bg-img .d-flex {
-        align-items: center;
-    }
-
-    .container-fluid.bg-img .ps-4 {
-        padding-left: 15px !important;
-    }
-
-    .container-fluid.bg-img h1 {
-        font-size: 32px !important;
-    }
-
-    /* Menu tabs */
-    .tab-class .nav-pills {
-        width: 100%;
-        border-radius: 12px !important;
-        display: flex !important;
-        flex-direction: column;
-        padding: 5px;
-    }
-
-    .tab-class .nav-pills .nav-item {
-        width: 100%;
-    }
-
-    .tab-class .nav-pills .nav-link {
-        width: 100%;
-        border-radius: 8px !important;
-        padding: 10px 12px !important;
-        font-size: 13px;
-    }
-
-    /* Cake cards */
-    .tab-content .col-lg-6 > .d-flex {
-        flex-direction: column !important;
-        height: auto !important;
-    }
-
-    .tab-content .flex-shrink-0 {
-        width: 100%;
-    }
-
-    .tab-content .flex-shrink-0 img {
-        width: 100% !important;
-        height: 220px !important;
-        object-fit: cover;
-    }
-
-    .tab-content .d-flex.flex-column.justify-content-center {
-        min-height: 150px;
-        padding: 20px !important;
-    }
-
-    .tab-content .d-flex.flex-column.justify-content-center h5 {
-        font-size: 18px;
-    }
-
-    .tab-content .d-flex.flex-column.justify-content-center span {
-        line-height: 1.6;
-    }
-
-    /* Services */
-    .service {
-        margin-bottom: 60px !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    .service .row {
-        --bs-gutter-y: 1.5rem;
-    }
-
-    .service .p-5 {
-        padding: 30px 20px !important;
-    }
-
-    .service h1 {
-        font-size: 28px !important;
-        line-height: 1.25;
-    }
-
-    /* Team */
-    .team-item {
-        margin-bottom: 10px;
-    }
-
-    /* Offer */
-    .bg-offer .py-5 {
-        padding-top: 35px !important;
-        padding-bottom: 35px !important;
-    }
-
-    .bg-offer h1 {
-        font-size: 30px !important;
-        line-height: 1.25;
-    }
-
-    .bg-offer .btn {
-        width: 100%;
-        margin: 5px 0 !important;
-    }
-
-    /* Testimonials */
-    .testimonial-item {
-        margin: 0 5px;
-    }
-
-    /* Footer */
-    .footer-about {
-        margin-bottom: 30px;
-    }
-
-    footer,
-    .container-fluid.bg-dark {
-        overflow: hidden;
-    }
-
-    /* Prevent long text from breaking layout */
-    p, span, h1, h2, h3, h4, h5, h6, a {
-        overflow-wrap: break-word;
-    }
-
-    /* Back to top */
-    .back-to-top {
-        right: 15px !important;
-        bottom: 15px !important;
-    }
-}
-
-@media (max-width: 575.98px) {
-
-    .container {
-        max-width: 100% !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-
-    .hero-header .display-1 {
-        font-size: 34px !important;
-    }
-
-    .hero-header h1.text-uppercase {
-        font-size: 19px !important;
-    }
-
-    .section-title h1.display-4 {
-        font-size: 27px !important;
-    }
-
-    .container-fluid.bg-img .d-flex {
-        align-items: flex-start;
-    }
-
-    .container-fluid.bg-img .bg-primary {
-        flex-shrink: 0;
-    }
-
-    .container-fluid.bg-img h5 {
-        font-size: 15px !important;
-    }
-
-    .container-fluid.bg-img h1 {
-        font-size: 28px !important;
-    }
-
-    .tab-content .flex-shrink-0 img {
-        height: 200px !important;
-    }
-
-    .team-item img {
-        min-height: 250px;
-        object-fit: cover;
-    }
-
-    .footer-about h1 {
-        font-size: 26px !important;
-    }
-}
-</style>
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CakeZone - Tajinder Singh</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="CakeZone, Birthday Cakes, Wedding Cakes, Custom Cakes, Bengaluru" name="keywords">
+    <meta content="CakeZone - Freshly baked birthday, wedding and custom cakes in Bengaluru." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Pacifico&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
-
-
-\<body>
-
-
-
-    \<!-- Topbar Start -->
-
-    \<div class="container-fluid px-0 d-none d-lg-block">
-
-        \<div class="row gx-0">
-
-            \<div class="col-lg-8 text-center bg-primary py-3">
-
-                \<div class="d-inline-flex align-items-center justify-content-center">
-
-                    \<div class="text-start">
-
-                        \<h6 class="text-uppercase mb-1">Opening Hours\</h6>
-
-                        \<span>Monday - Saturday, 09:00AM - 08:00PM\</span>
-
-                    \</div>
-
-                \</div>
-
-            \</div>
-
-
-
-            \<div class="col-lg-4 text-center bg-dark py-3">
-
-                \<div class="d-inline-flex align-items-center justify-content-center">
-
-                    \<div class="text-start">
-
-                        \<h6 class="text-uppercase text-white mb-1">Contact Us\</h6>
-
-                        \<span class="text-white">+91 7402300022\</span>
-
-                    \</div>
-
-                \</div>
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- Topbar End -->
-
-
-
-
-
-    \<!-- Navbar Start -->
-
-    \<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-
-        \<a href="index.html" class="navbar-brand ms-lg-5">
-
-            \<h1 class="m-0 text-uppercase text-white">
-
-                \<i class="fa fa-birthday-cake fs-1 text-primary me-3">\</i>CakeZone
-
-            \</h1>
-
-        \</a>
-
-
-
-        \<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-
-            \<span class="navbar-toggler-icon">\</span>
-
-        \</button>
-
-
-
-        \<div class="collapse navbar-collapse" id="navbarCollapse">
-
-            \<div class="navbar-nav ms-auto py-0">
-
-
-
-                \<a href="index.html" class="nav-item nav-link active">Home\</a>
-
-                \<a href="about.html" class="nav-item nav-link">About\</a>
-
-                \<a href="menu.html" class="nav-item nav-link">Menu\</a>
-
-                \<a href="team.html" class="nav-item nav-link">Chefs\</a>
-
-                \<a href="testimonial.html" class="nav-item nav-link">Testimonials\</a>
-
-                \<a href="contact.html" class="nav-item nav-link">Contact\</a>
-
-
-
-                \<a href="contact.html" class="nav-item nav-link bg-primary text-white px-5 ms-lg-3">
-
-                    Order Now
-
-                    \<i class="fa fa-arrow-right ms-2">\</i>
-
-                \</a>
-
-
-
-            \</div>
-
-        \</div>
-
-    \</nav>
-
-    \<!-- Navbar End -->
-
-
-
-
-
-    \<!-- Hero Start -->
-
-    \<div class="container-fluid bg-primary py-5 mb-5 hero-header">
-
-        \<div class="container py-5">
-
-            \<div class="row justify-content-start py-5">
-
-                \<div class="col-lg-7 text-center text-lg-start">
-
-
-
-                    \<h1 class="font-secondary text-primary mb-3">Freshly Baked\</h1>
-
-
-
-                    \<h1 class="display-1 text-uppercase text-white mb-4">
-
-                        CakeZone
-
-                    \</h1>
-
-
-
-                    \<h1 class="text-uppercase text-white">
-
-                        Delicious Cakes Made With Love
-
-                    \</h1>
-
-
-
-                    \<div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-
-
-
-                        \<a href="menu.html" class="btn btn-primary border-inner py-3 px-5 me-5">
-
-                            Explore Cakes
-
-                        \</a>
-
-
-
-                        \<a href="contact.html" class="btn btn-outline-light py-3 px-5">
-
-                            Order Now
-
-                        \</a>
-
-
-
-                    \</div>
-
-                \</div>
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- Hero End -->
-
-
-
-
-
-    \<!-- About Start -->
-
-    \<div class="container-fluid pt-5">
-
-        \<div class="container">
-
-            \<div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
-
-                \<h2 class="text-primary font-secondary">About CakeZone\</h2>
-
-                \<h1 class="display-4 text-uppercase">Fresh Cakes For Every Celebration\</h1>
-
-            \</div>
-
-
-
-            \<div class="row gx-5">
-
-                \<div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
-
-                    \<div class="position-relative h-100">
-
-                        \<img class="position-absolute w-100 h-100"
-
-                             src="img/about.jpg"
-
-                             style="object-fit: cover;"
-
-                             alt="CakeZone Cakes">
-
-                    \</div>
-
-                \</div>
-
-
-
-                \<div class="col-lg-6 pb-5">
-
-                    \<h4 class="mb-4">
-
-                        Delicious cakes made with fresh ingredients and attention to detail.
-
-                    \</h4>
-
-
-
-                    \<p class="mb-5">
-
-                        At CakeZone, we create freshly baked cakes for birthdays, weddings,
-
-                        anniversaries and special celebrations. From classic flavors to
-
-                        fully customized designs, every cake is prepared with care and
-
-                        made to match your occasion.
-
-                    \</p>
-
-
-
-                    \<div class="row g-5">
-
-                        \<div class="col-sm-6">
-
-                            \<div class="d-flex align-items-center justify-content-center border-inner mb-4"
-
-                                 style="width: 90px; height: 90px;">
-
-                                \<i class="fa fa-birthday-cake fa-2x text-primary">\</i>
-
-                            \</div>
-
-
-
-                            \<h4 class="text-uppercase">Fresh Ingredients\</h4>
-
-
-
-                            \<p class="mb-0">
-
-                                Quality ingredients and freshly prepared cakes for better
-
-                                taste and presentation.
-
-                            \</p>
-
-                        \</div>
-
-
-
-                        \<div class="col-sm-6">
-
-                            \<div class="d-flex align-items-center justify-content-center border-inner mb-4"
-
-                                 style="width: 90px; height: 90px;">
-
-                                \<i class="fa fa-award fa-2x text-primary">\</i>
-
-                            \</div>
-
-
-
-                            \<h4 class="text-uppercase">Quality Cakes\</h4>
-
-
-
-                            \<p class="mb-0">
-
-                                Carefully designed cakes suitable for birthdays, weddings
-
-                                and customized celebrations.
-
-                            \</p>
-
-                        \</div>
-
-                    \</div>
-
-                \</div>
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- About End -->
-
-
-
-
-
-    \<!-- Facts Start -->
-
-    \<div class="container-fluid bg-img py-5 mb-5">
-
-        \<div class="container py-5">
-
-            \<div class="row gx-5 gy-4">
-
-
-
-                \<div class="col-lg-3 col-md-6">
-
-                    \<div class="d-flex">
-
-                        \<div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
-
-                             style="width: 60px; height: 60px;">
-
-                            \<i class="fa fa-birthday-cake fs-4 text-white">\</i>
-
-                        \</div>
-
-
-
-                        \<div class="ps-4">
-
-                            \<h5 class="text-white">Cakes Delivered\</h5>
-
-                            \<h1 class="display-5 text-white mb-0" data-toggle="counter-up">500\</h1>
-
-                        \</div>
-
-                    \</div>
-
-                \</div>
-
-
-
-                \<div class="col-lg-3 col-md-6">
-
-                    \<div class="d-flex">
-
-                        \<div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
-
-                             style="width: 60px; height: 60px;">
-
-                            \<i class="fa fa-users fs-4 text-white">\</i>
-
-                        \</div>
-
-
-
-                        \<div class="ps-4">
-
-                            \<h5 class="text-white">Cake Varieties\</h5>
-
-                            \<h1 class="display-5 text-white mb-0" data-toggle="counter-up">500\</h1>
-
-                        \</div>
-
-                    \</div>
-
-                \</div>
-
-
-
-                \<div class="col-lg-3 col-md-6">
-
-                    \<div class="d-flex">
-
-                        \<div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
-
-                             style="width: 60px; height: 60px;">
-
-                            \<i class="fa fa-check fs-4 text-white">\</i>
-
-                        \</div>
-
-
-
-                        \<div class="ps-4">
-
-                            \<h5 class="text-white">Custom Orders\</h5>
-
-                            \<h1 class="display-5 text-white mb-0" data-toggle="counter-up">500\</h1>
-
-                        \</div>
-
-                    \</div>
-
-                \</div>
-
-
-
-                \<div class="col-lg-3 col-md-6">
-
-                    \<div class="d-flex">
-
-                        \<div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
-
-                             style="width: 60px; height: 60px;">
-
-                            \<i class="fa fa-heart fs-4 text-white">\</i>
-
-                        \</div>
-
-
-
-                        \<div class="ps-4">
-
-                            \<h5 class="text-white">Happy Customers\</h5>
-
-                            \<h1 class="display-5 text-white mb-0" data-toggle="counter-up">500\</h1>
-
-                        \</div>
-
-                    \</div>
-
-                \</div>
-
-
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- Facts End -->
-
-
-
-
-
-    \<!-- Products Start -->
-
-    \<div class="container-fluid about py-5">
-
-        \<div class="container">
-
-            \<div class="section-title position-relative text-center mx-auto mb-5 pb-3"
-
-                 style="max-width: 600px;">
-
-
-
-                \<h2 class="text-primary font-secondary">Our Menu\</h2>
-
-                \<h1 class="display-4 text-uppercase">Explore Our Cakes\</h1>
-
-
-
-            \</div>
-
-
-
-            \<div class="tab-class text-center">
-
-
-
-                \<ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5">
-
-
-
-                    \<li class="nav-item">
-
-                        \<a class="nav-link rounded-pill text-white active"
-
-                           data-bs-toggle="pill"
-
-                           href="#tab-1">
-
-                            Birthday Cakes
-
-                        \</a>
-
-                    \</li>
-
-
-
-                    \<li class="nav-item">
-
-                        \<a class="nav-link rounded-pill text-white"
-
-                           data-bs-toggle="pill"
-
-                           href="#tab-2">
-
-                            Wedding Cakes
-
-                        \</a>
-
-                    \</li>
-
-
-
-                    \<li class="nav-item">
-
-                        \<a class="nav-link rounded-pill text-white"
-
-                           data-bs-toggle="pill"
-
-                           href="#tab-3">
-
-                            Custom Cakes
-
-                        \</a>
-
-                    \</li>
-
-
-
-                \</ul>
-
-
-
-
-
-                \<div class="tab-content">
-
-
-
-                    \<!-- Birthday Cakes -->
-
-                    \<div id="tab-1" class="tab-pane fade show active">
-
-
-
-                        \<div class="row g-3">
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-1.jpg"
-
-                                             alt="Chocolate Truffle Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Chocolate Truffle\</h5>
-
-                                        \<span>Rich chocolate sponge layered with smooth chocolate truffle cream.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹299\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-2.jpg"
-
-                                             alt="Classic Vanilla Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Classic Vanilla\</h5>
-
-                                        \<span>Soft vanilla sponge with creamy vanilla frosting and a light finish.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹380\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-3.jpg"
-
-                                             alt="Black Forest Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Black Forest\</h5>
-
-                                        \<span>Chocolate sponge with whipped cream, cherry filling and chocolate shavings.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹450\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-4.jpg"
-
-                                             alt="Red Velvet Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Red Velvet\</h5>
-
-                                        \<span>Classic red velvet sponge with smooth cream cheese frosting.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹500\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-5.jpg"
-
-                                             alt="Butterscotch Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Butterscotch\</h5>
-
-                                        \<span>Moist cake with creamy butterscotch frosting and crunchy caramel bits.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹550\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-6.jpg"
-
-                                             alt="Fresh Strawberry Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Fresh Strawberry\</h5>
-
-                                        \<span>Soft sponge layered with fresh strawberry filling and creamy frosting.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹599\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-                        \</div>
-
-                    \</div>
-
-
-
-
-
-                    \<!-- Wedding Cakes -->
-
-                    \<div id="tab-2" class="tab-pane fade">
-
-
-
-                        \<div class="row g-3">
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-1.jpg"
-
-                                             alt="Classic Wedding Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Classic Wedding\</h5>
-
-                                        \<span>Elegant multi-layer wedding cake with smooth cream frosting.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹1,499\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-2.jpg"
-
-                                             alt="Red Velvet Wedding Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Red Velvet Wedding\</h5>
-
-                                        \<span>Premium red velvet layers with cream cheese frosting for weddings.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹1,999\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-3.jpg"
-
-                                             alt="Premium Chocolate Wedding Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Premium Chocolate Wedding\</h5>
-
-                                        \<span>Rich chocolate layers finished with premium chocolate decorations.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹2,499\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-4.jpg"
-
-                                             alt="Floral Wedding Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Floral Wedding\</h5>
-
-                                        \<span>Beautiful wedding cake decorated with elegant floral-style designs.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹2,999\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-5.jpg"
-
-                                             alt="Designer Wedding Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Designer Wedding\</h5>
-
-                                        \<span>Premium designer cake created for elegant wedding celebrations.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹3,499\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-6.jpg"
-
-                                             alt="Royal Celebration Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Royal Celebration\</h5>
-
-                                        \<span>Luxury multi-tier cake with premium decoration for grand celebrations.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹3,999\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-                        \</div>
-
-                    \</div>
-
-
-
-
-
-                    \<!-- Custom Cakes -->
-
-                    \<div id="tab-3" class="tab-pane fade">
-
-
-
-                        \<div class="row g-3">
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-1.jpg"
-
-                                             alt="Custom Photo Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Custom Photo Cake\</h5>
-
-                                        \<span>Add your favourite photo to create a personalised celebration cake.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹599+\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-2.jpg"
-
-                                             alt="Custom Theme Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Custom Theme Cake\</h5>
-
-                                        \<span>Theme-based cake designs created according to your celebration.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹799+\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-3.jpg"
-
-                                             alt="Designer Custom Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Designer Custom\</h5>
-
-                                        \<span>Creative designer cake with personalised decorations and details.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹999+\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-4.jpg"
-
-                                             alt="Photo and Theme Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Photo & Theme\</h5>
-
-                                        \<span>A personalised photo cake combined with your preferred celebration theme.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹1,199+\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-5.jpg"
-
-                                             alt="Premium Custom Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Premium Custom\</h5>
-
-                                        \<span>Premium customised cake designed for important and special occasions.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹1,499+\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-
-
-                            \<div class="col-lg-6">
-
-                                \<div class="d-flex h-100">
-
-                                    \<div class="flex-shrink-0">
-
-                                        \<img class="img-fluid" src="img/cake-6.jpg"
-
-                                             alt="Fully Customised Cake"
-
-                                             style="width: 150px; height: 150px;">
-
-                                    \</div>
-
-
-
-                                    \<div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-
-                                        \<h5 class="text-uppercase">Fully Customised\</h5>
-
-                                        \<span>Your cake, your design — customised according to your requirements.\</span>
-
-                                        \<h5 class="text-primary mt-2">₹599+\</h5>
-
-                                    \</div>
-
-                                \</div>
-
-                            \</div>
-
-
-
-                        \</div>
-
-                    \</div>
-
-
-
-                \</div>
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- Products End -->
-
-
-
-
-
-    \<!-- Services Start -->
-
-    \<div class="container-fluid service position-relative px-5 mt-5"
-
-         style="margin-bottom: 135px;">
-
-
-
-        \<div class="container">
-
-
-
-            \<div class="row g-5">
-
-
-
-                \<div class="col-lg-4 col-md-6">
-
-                    \<div class="bg-primary border-inner text-center text-white p-5">
-
-
-
-                        \<h4 class="text-uppercase mb-3">
-
-                            Birthday Cake
-
-                        \</h4>
-
-
-
-                        \<p>
-
-                            Choose from chocolate, vanilla, red velvet, black forest,
-
-                            butterscotch and strawberry cakes. Prices start from ₹299.
-
-                        \</p>
-
-
-
-                        \<a class="text-uppercase text-dark" href="menu.html">
-
-                            View Menu \<i class="bi bi-arrow-right">\</i>
-
-                        \</a>
-
-
-
-                    \</div>
-
-                \</div>
-
-
-
-
-
-                \<div class="col-lg-4 col-md-6">
-
-                    \<div class="bg-primary border-inner text-center text-white p-5">
-
-
-
-                        \<h4 class="text-uppercase mb-3">
-
-                            Wedding Cake
-
-                        \</h4>
-
-
-
-                        \<p>
-
-                            Elegant multi-tier wedding cakes with premium designs,
-
-                            flavours and decorations. Prices start from ₹1,499.
-
-                        \</p>
-
-
-
-                        \<a class="text-uppercase text-dark" href="menu.html">
-
-                            View Menu \<i class="bi bi-arrow-right">\</i>
-
-                        \</a>
-
-
-
-                    \</div>
-
-                \</div>
-
-
-
-
-
-                \<div class="col-lg-4 col-md-6">
-
-                    \<div class="bg-primary border-inner text-center text-white p-5">
-
-
-
-                        \<h4 class="text-uppercase mb-3">
-
-                            Custom Cake
-
-                        \</h4>
-
-
-
-                        \<p>
-
-                            Create a personalised cake based on your favourite photo,
-
-                            theme, design or celebration. Starting from ₹599+.
-
-                        \</p>
-
-
-
-                        \<a class="text-uppercase text-dark" href="contact.html">
-
-                            Order Custom \<i class="bi bi-arrow-right">\</i>
-
-                        \</a>
-
-
-
-                    \</div>
-
-                \</div>
-
-
-
-
-
-                \<div class="col-lg-12 col-md-6">
-
-                    \<div class="bg-img bg-overlay text-center p-5">
-
-
-
-                        \<h1 class="text-white mb-4">
-
-                            Freshly Baked Cakes For Every Celebration
-
-                        \</h1>
-
-
-
-                        \<p class="text-white">
-
-                            Birthday, wedding or custom — choose a cake made especially
-
-                            for your special occasion.
-
-                        \</p>
-
-
-
-                        \<a href="menu.html"
-
-                           class="btn btn-primary border-inner py-3 px-5">
-
-                            Explore Menu
-
-                        \</a>
-
-
-
-                    \</div>
-
-                \</div>
-
-
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- Services End -->
-
-
-
-
-
-    \<!-- Team Start -->
-
-    \<div class="container-fluid py-5">
-
-        \<div class="container">
-
-
-
-            \<div class="section-title position-relative text-center mx-auto mb-5 pb-3"
-
-                 style="max-width: 600px;">
-
-
-
-                \<h2 class="text-primary font-secondary">Our Chefs\</h2>
-
-
-
-                \<h1 class="display-4 text-uppercase">
-
-                    Meet Our Cake Experts
-
-                \</h1>
-
-
-
-            \</div>
-
-
-
-
-
-            \<div class="row g-5">
-
-
-
-                \<div class="col-lg-4 col-md-6">
-
-                    \<div class="team-item">
-
-
-
-                        \<div class="position-relative overflow-hidden">
-
-                            \<img class="img-fluid w-100"
-
-                                 src="img/team-1.jpg"
-
-                                 alt="Chef Daniel">
-
-                        \</div>
-
-
-
-                        \<div class="bg-dark border-inner text-center p-4">
-
-                            \<h4 class="text-uppercase text-primary">
-
-                                Chef Daniel
-
-                            \</h4>
-
-
-
-                            \<p class="text-white m-0">
-
-                                Head Pastry Chef
-
-                            \</p>
-
-                        \</div>
-
-
-
-                    \</div>
-
-                \</div>
-
-
-
-
-
-                \<div class="col-lg-4 col-md-6">
-
-                    \<div class="team-item">
-
-
-
-                        \<div class="position-relative overflow-hidden">
-
-                            \<img class="img-fluid w-100"
-
-                                 src="img/team-2.jpg"
-
-                                 alt="Chef Sophia">
-
-                        \</div>
-
-
-
-                        \<div class="bg-dark border-inner text-center p-4">
-
-                            \<h4 class="text-uppercase text-primary">
-
-                                Chef Sophia
-
-                            \</h4>
-
-
-
-                            \<p class="text-white m-0">
-
-                                Cake Decoration Specialist
-
-                            \</p>
-
-                        \</div>
-
-
-
-                    \</div>
-
-                \</div>
-
-
-
-
-
-                \<div class="col-lg-4 col-md-6">
-
-                    \<div class="team-item">
-
-
-
-                        \<div class="position-relative overflow-hidden">
-
-                            \<img class="img-fluid w-100"
-
-                                 src="img/team-3.jpg"
-
-                                 alt="Chef Michael">
-
-                        \</div>
-
-
-
-                        \<div class="bg-dark border-inner text-center p-4">
-
-                            \<h4 class="text-uppercase text-primary">
-
-                                Chef Michael
-
-                            \</h4>
-
-
-
-                            \<p class="text-white m-0">
-
-                                Custom Cake Specialist
-
-                            \</p>
-
-                        \</div>
-
-
-
-                    \</div>
-
-                \</div>
-
-
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- Team End -->
-
-
-
-
-
-    \<!-- Offer Start -->
-
-    \<div class="container-fluid bg-offer my-5 py-5">
-
-        \<div class="container py-5">
-
-
-
-            \<div class="row gx-5 justify-content-center">
-
-                \<div class="col-lg-7 text-center">
-
-
-
-                    \<div class="section-title position-relative text-center mx-auto mb-4 pb-3"
-
-                         style="max-width: 600px;">
-
-
-
-                        \<h2 class="text-primary font-secondary">
-
-                            Featured Cakes
-
-                        \</h2>
-
-
-
-                        \<h1 class="display-4 text-uppercase text-white">
-
-                            Cakes For Every Celebration
-
-                        \</h1>
-
-
-
-                    \</div>
-
-
-
-                    \<p class="text-white mb-4">
-
-                        Enjoy freshly baked cakes prepared with quality ingredients.
-
-                        Choose from birthday, wedding and customised designs made
-
-                        according to your occasion.
-
-                    \</p>
-
-
-
-                    \<a href="menu.html"
-
-                       class="btn btn-primary border-inner py-3 px-5 me-3">
-
-                        View Menu
-
-                    \</a>
-
-
-
-                    \<a href="contact.html"
-
-                       class="btn btn-dark border-inner py-3 px-5">
-
-                        Order Now
-
-                    \</a>
-
-
-
-                \</div>
-
-            \</div>
-
-
-
-        \</div>
-
-    \</div>
-
-    \<!-- Offer End -->
-
-
-
-
-
-    \<!-- Testimonial Start -->
-
-    \<div class="container-fluid py-5">
-
-        \<div class="container">
-
-
-
-            \<div class="section-title position-relative text-center mx-auto mb-5 pb-3"
-
-                 style="max-width: 600px;">
-
-
-
-                \<h2 class="text-primary font-secondary">
-
-                    Testimonials
-
-                \</h2>
-
-
-
-                \<h1 class="display-4 text-uppercase">
-
-                    Our Customers Say
-
-                \</h1>
-
-
-
-            \</div>
-
-
-
-
-
-            \<div class="owl-carousel testimonial-carousel">
-
-
-
-                \<div class="testimonial-item bg-light border-inner p-4">
-
-
-
-                    \<div class="d-flex align-items-center mb-3">
-
-                        \<img class="img-fluid flex-shrink-0"
-
-                             src="img/testimonial-1.jpg"
-
-                             style="width: 50px; height: 50px;"
-
-                             alt="Priya Sharma">
-
-
-
-                        \<div class="ps-3">
-
-                            \<h5 class="text-uppercase mb-1">
-
-                                Priya Sharma
-
-                            \</h5>
-
-
-
-                            \<span>Birthday Customer\</span>
-
-                        \</div>
-
-                    \</div>
-
-
-
-                    \<p class="mb-0">
-
-                        The chocolate cake was fresh, soft and delicious.
-
-                        The design was exactly what I wanted for the birthday.
-
-                    \</p>
-
-
-
-                \</div>
-
-
-
-
-
-                \<div class="testimonial-item bg-light border-inner p-4">
-
-
-
-                    \<div class="d-flex align-items-center mb-3">
-
-                        \<img class="img-fluid flex-shrink-0"
-
-                             src="img/testimonial-2.jpg"
-
-                             style="width: 50px; height: 50px;"
-
-                             alt="Rahul Mehta">
-
-
-
-                        \<div class="ps-3">
-
-                            \<h5 class="text-uppercase mb-1">
-
-                                Rahul Mehta
-
-                            \</h5>
-
-
-
-                            \<span>Wedding Customer\</span>
-
-                        \</div>
-
-                    \</div>
-
-
-
-                    \<p class="mb-0">
-
-                        The wedding cake looked beautiful and tasted amazing.
-
-                        The presentation was perfect for our celebration.
-
-                    \</p>
-
-
-
-                \</div>
-
-
-
-
-
-                \<div class="testimonial-item bg-light border-inner p-4">
-
-
-
-                    \<div class="d-flex align-items-center mb-3">
-
-                        \<img class="img-fluid flex-shrink-0"
-
-                             src="img/testimonial-3.jpg"
-
-                             style="width: 50px; height: 50px;"
-
-                             alt="Ananya Rao">
-
-
-
-                        \<div class="ps-3">
-
-                            \<h5 class="text-uppercase mb-1">
-
-                                Ananya Rao
-
-                            \</h5>
-
-
-
-                            \<span>Custom Cake Customer\</span>
-
-                        \</div>
-
-                    \</div>
-
-
-
-                    \<p class="mb-0">
-
-                        I ordered a customised theme cake and the final design
-
-                        looked exactly as requested. Great attention to detail.
-
-                    \</p>
-
-
-
-                \</div>
-
-
-
-
-
-                \<div class="testimonial-item bg-light border-inner p-4">
-
-
-
-                    \<div class="d-flex align-items-center mb-3">
-
-                        \<img class="img-fluid flex-shrink-0"
-
-                             src="img/testimonial-4.jpg"
-
-                             style="width: 50px; height: 50px;"
-
-                             alt="Arjun Kumar">
-
-
-
-                        \<div class="ps-3">
-
-                            \<h5 class="text-uppercase mb-1">
-
-                                Arjun Kumar
-
-                            \</h5>
-
-
-
-                            \<span>Regular Customer\</span>
-
-                        \</div>
-
-                    \</div>
-
-
-
-                    \<p class="mb-0">
-
-                        CakeZone has a good variety of cakes and the ordering
-
-                        process is simple. The cakes are always fresh and tasty.
-
-                    \</p>
-
-
-
-                \</div>
-
-
-
-            \</div>
-
-        \</div>
-
-    \</div>
-
-    \<!-- Testimonial End -->
-
-
-
-
-
-    \<!-- Footer Start -->
-
-    \<div class="container-fluid bg-dark text-secondary" style="margin-top: 90px;">
-
-
-
-        \<div class="container">
-
-
-
-            \<div class="row gx-5">
-
-
-
-                \<div class="col-lg-4 col-md-6 footer-about">
-
-
-
-                    \<div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-
-
-
-                        \<a href="index.html" class="navbar-brand">
-
-                            \<h1 class="m-0 text-uppercase text-white">
-
-                                \<i class="fa fa-birthday-cake fs-1 text-white me-3">\</i>
-
-                                CakeZone
-
-                            \</h1>
-
-                        \</a>
-
-
-
-                        \<p class="mt-3 mb-4 text-white">
-
-                            Freshly baked birthday, wedding and custom cakes
-
-                            made with care for every special occasion.
-
-                        \</p>
-
-
-
-                    \</div>
-
-
-
-                \</div>
-
-
-
-
-
-                \<div class="col-lg-8 col-md-6">
-
-
-
-                    \<div class="row gx-5">
-
-
-
-                        \<div class="col-lg-4 col-md-12 pt-5 mb-5">
-
-
-
-                            \<h4 class="text-primary text-uppercase mb-4">
-
-                                Get In Touch
-
-                            \</h4>
-
-
-
-                            \<p class="mb-2">
-
-                                \<i class="fa fa-map-marker-alt text-primary me-3">\</i>
-
-                                Sapthagiri Layout, Munnekollal, Marathahalli,
-
-                                Bengaluru, Karnataka
-
-                            \</p>
-
-
-
-                            \<p class="mb-2">
-
-                                \<i class="fa fa-envelope text-primary me-3">\</i>
-
-                                tajinder5678912\@gmail.com
-
-                            \</p>
-
-
-
-                            \<p class="mb-0">
-
-                                \<i class="fa fa-phone-alt text-primary me-3">\</i>
-
-                                +91 7402300022
-
-                            \</p>
-
-
-
-                        \</div>
-
-
-
-
-
-                        \<div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-
-
-
-                            \<h4 class="text-primary text-uppercase mb-4">
-
-                                Quick Links
-
-                            \</h4>
-
-
-
-                            \<div class="d-flex flex-column justify-content-start">
-
-
-
-                                \<a class="text-secondary mb-2" href="index.html">
-
-                                    \<i class="fa fa-angle-right text-primary me-2">\</i>
-
-                                    Home
-
-                                \</a>
-
-
-
-                                \<a class="text-secondary mb-2" href="about.html">
-
-                                    \<i class="fa fa-angle-right text-primary me-2">\</i>
-
-                                    About
-
-                                \</a>
-
-
-
-                                \<a class="text-secondary mb-2" href="menu.html">
-
-                                    \<i class="fa fa-angle-right text-primary me-2">\</i>
-
-                                    Menu
-
-                                \</a>
-
-
-
-                                \<a class="text-secondary mb-2" href="team.html">
-
-                                    \<i class="fa fa-angle-right text-primary me-2">\</i>
-
-                                    Chefs
-
-                                \</a>
-
-
-
-                                \<a class="text-secondary mb-2" href="testimonial.html">
-
-                                    \<i class="fa fa-angle-right text-primary me-2">\</i>
-
-                                    Testimonials
-
-                                \</a>
-
-
-
-                                \<a class="text-secondary" href="contact.html">
-
-                                    \<i class="fa fa-angle-right text-primary me-2">\</i>
-
-                                    Contact
-
-                                \</a>
-
-
-
-                            \</div>
-
-
-
-                        \</div>
-
-
-
-
-
-                        \<div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-
-
-
-                            \<h4 class="text-primary text-uppercase mb-4">
-
-                                Follow Us
-
-                            \</h4>
-
-
-
-                            \<p>
-
-                                Stay connected with CakeZone for new cake designs,
-
-                                custom orders and updates.
-
-                            \</p>
-
-
-
-                            \<div class="d-flex">
-
-
-
-                                \<a class="btn btn-square btn-primary me-2" href="#">
-
-                                    \<i class="fab fa-twitter">\</i>
-
-                                \</a>
-
-
-
-                                \<a class="btn btn-square btn-primary me-2" href="#">
-
-                                    \<i class="fab fa-facebook-f">\</i>
-
-                                \</a>
-
-
-
-                                \<a class="btn btn-square btn-primary me-2" href="#">
-
-                                    \<i class="fab fa-instagram">\</i>
-
-                                \</a>
-
-
-
-                            \</div>
-
-
-
-                        \</div>
-
-
-
-                    \</div>
-
-
-
-                \</div>
-
-
-
-            \</div>
-
-
-
-        \</div>
-
-
-
-
-
-        \<div class="container-fluid text-center py-4"
-
-             style="background: #111111;">
-
-
-
-            \<p class="mb-0">
-
-                &copy; 2026 \<strong>CakeZone\</strong>. All Rights Reserved.
-
-                Designed by Tajinder Singh.
-
-            \</p>
-
-
-
-        \</div>
-
-
-
-    \</div>
-
-    \<!-- Footer End -->
-
-
-
-
-
-    \<!-- Back to Top -->
-
-    \<a href="#" class="btn btn-primary py-3 fs-4 back-to-top">
-
-        \<i class="bi bi-arrow-up">\</i>
-
-    \</a>
-
-
-
-
-
-    \<!-- JavaScript Libraries -->
-
-    \<script src="https\://code.jquery.com/jquery-3.4.1.min.js">\</script>
-
-    \<script src="https\://cdn.jsdelivr.net/npm/bootstrap\@5.0.0/dist/js/bootstrap.bundle.min.js">\</script>
-
-
-
-    \<script src="lib/easing/easing.min.js">\</script>
-
-    \<script src="lib/waypoints/waypoints.min.js">\</script>
-
-    \<script src="lib/counterup/counterup.min.js">\</script>
-
-    \<script src="lib/owlcarousel/owl.carousel.min.js">\</script>
-
-    \<script src="lib/isotope/isotope.pkgd.min.js">\</script>
-
-    \<script src="lib/lightbox/js/lightbox.min.js">\</script>
-
-
-
-    \<!-- Template Javascript -->
-
-    \<script src="js/main.js">\</script>
-
-
-
-\</body>
-
-
-
-\</html>
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid px-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center bg-primary py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <div class="text-start">
+                        <h6 class="text-uppercase mb-1">Opening Hours</h6>
+                        <span>Monday - Saturday, 09:00AM - 08:00PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 text-center bg-dark py-3">
+                <div class="d-inline-flex align-items-center justify-content-center">
+                    <div class="text-start">
+                        <h6 class="text-uppercase text-white mb-1">Contact Us</h6>
+                        <span class="text-white">+91 7402300022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <a href="index.html" class="navbar-brand ms-lg-5">
+            <h1 class="m-0 text-uppercase text-white">
+                <i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone
+            </h1>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="menu.html" class="nav-item nav-link">Menu</a>
+                <a href="team.html" class="nav-item nav-link">Chefs</a>
+                <a href="testimonial.html" class="nav-item nav-link">Testimonials</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+                <a href="contact.html" class="nav-item nav-link bg-primary text-white px-5 ms-lg-3">
+                    Order Now
+                    <i class="fa fa-arrow-right ms-2"></i>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Hero Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="container py-5">
+            <div class="row justify-content-start py-5">
+                <div class="col-lg-7 text-center text-lg-start">
+
+                    <h1 class="font-secondary text-primary mb-3">Freshly Baked</h1>
+
+                    <h1 class="display-1 text-uppercase text-white mb-4">
+                        CakeZone
+                    </h1>
+
+                    <h1 class="text-uppercase text-white">
+                        Delicious Cakes Made With Love
+                    </h1>
+
+                    <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+
+                        <a href="menu.html" class="btn btn-primary border-inner py-3 px-5 me-5">
+                            Explore Cakes
+                        </a>
+
+                        <a href="contact.html" class="btn btn-outline-light py-3 px-5">
+                            Order Now
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
+                <h2 class="text-primary font-secondary">About CakeZone</h2>
+                <h1 class="display-4 text-uppercase">Fresh Cakes For Every Celebration</h1>
+            </div>
+
+            <div class="row gx-5">
+                <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100"
+                             src="img/about.jpg"
+                             style="object-fit: cover;"
+                             alt="CakeZone Cakes">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 pb-5">
+                    <h4 class="mb-4">
+                        Delicious cakes made with fresh ingredients and attention to detail.
+                    </h4>
+
+                    <p class="mb-5">
+                        At CakeZone, we create freshly baked cakes for birthdays, weddings,
+                        anniversaries and special celebrations. From classic flavors to
+                        fully customized designs, every cake is prepared with care and
+                        made to match your occasion.
+                    </p>
+
+                    <div class="row g-5">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center border-inner mb-4"
+                                 style="width: 90px; height: 90px;">
+                                <i class="fa fa-birthday-cake fa-2x text-primary"></i>
+                            </div>
+
+                            <h4 class="text-uppercase">Fresh Ingredients</h4>
+
+                            <p class="mb-0">
+                                Quality ingredients and freshly prepared cakes for better
+                                taste and presentation.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center justify-content-center border-inner mb-4"
+                                 style="width: 90px; height: 90px;">
+                                <i class="fa fa-award fa-2x text-primary"></i>
+                            </div>
+
+                            <h4 class="text-uppercase">Quality Cakes</h4>
+
+                            <p class="mb-0">
+                                Carefully designed cakes suitable for birthdays, weddings
+                                and customized celebrations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid bg-img py-5 mb-5">
+        <div class="container py-5">
+            <div class="row gx-5 gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
+                             style="width: 60px; height: 60px;">
+                            <i class="fa fa-birthday-cake fs-4 text-white"></i>
+                        </div>
+
+                        <div class="ps-4">
+                            <h5 class="text-white">Cakes Delivered</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">500</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
+                             style="width: 60px; height: 60px;">
+                            <i class="fa fa-users fs-4 text-white"></i>
+                        </div>
+
+                        <div class="ps-4">
+                            <h5 class="text-white">Cake Varieties</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">500</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
+                             style="width: 60px; height: 60px;">
+                            <i class="fa fa-check fs-4 text-white"></i>
+                        </div>
+
+                        <div class="ps-4">
+                            <h5 class="text-white">Custom Orders</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">500</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3"
+                             style="width: 60px; height: 60px;">
+                            <i class="fa fa-heart fs-4 text-white"></i>
+                        </div>
+
+                        <div class="ps-4">
+                            <h5 class="text-white">Happy Customers</h5>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">500</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- Products Start -->
+    <div class="container-fluid about py-5">
+        <div class="container">
+            <div class="section-title position-relative text-center mx-auto mb-5 pb-3"
+                 style="max-width: 600px;">
+
+                <h2 class="text-primary font-secondary">Our Menu</h2>
+                <h1 class="display-4 text-uppercase">Explore Our Cakes</h1>
+
+            </div>
+
+            <div class="tab-class text-center">
+
+                <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5">
+
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill text-white active"
+                           data-bs-toggle="pill"
+                           href="#tab-1">
+                            Birthday Cakes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill text-white"
+                           data-bs-toggle="pill"
+                           href="#tab-2">
+                            Wedding Cakes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link rounded-pill text-white"
+                           data-bs-toggle="pill"
+                           href="#tab-3">
+                            Custom Cakes
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <div class="tab-content">
+
+                    <!-- Birthday Cakes -->
+                    <div id="tab-1" class="tab-pane fade show active">
+
+                        <div class="row g-3">
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-1.jpg"
+                                             alt="Chocolate Truffle Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Chocolate Truffle</h5>
+                                        <span>Rich chocolate sponge layered with smooth chocolate truffle cream.</span>
+                                        <h5 class="text-primary mt-2">₹299</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-2.jpg"
+                                             alt="Classic Vanilla Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Classic Vanilla</h5>
+                                        <span>Soft vanilla sponge with creamy vanilla frosting and a light finish.</span>
+                                        <h5 class="text-primary mt-2">₹380</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-3.jpg"
+                                             alt="Black Forest Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Black Forest</h5>
+                                        <span>Chocolate sponge with whipped cream, cherry filling and chocolate shavings.</span>
+                                        <h5 class="text-primary mt-2">₹450</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-4.jpg"
+                                             alt="Red Velvet Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Red Velvet</h5>
+                                        <span>Classic red velvet sponge with smooth cream cheese frosting.</span>
+                                        <h5 class="text-primary mt-2">₹500</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-5.jpg"
+                                             alt="Butterscotch Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Butterscotch</h5>
+                                        <span>Moist cake with creamy butterscotch frosting and crunchy caramel bits.</span>
+                                        <h5 class="text-primary mt-2">₹550</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-6.jpg"
+                                             alt="Fresh Strawberry Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Fresh Strawberry</h5>
+                                        <span>Soft sponge layered with fresh strawberry filling and creamy frosting.</span>
+                                        <h5 class="text-primary mt-2">₹599</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Wedding Cakes -->
+                    <div id="tab-2" class="tab-pane fade">
+
+                        <div class="row g-3">
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-1.jpg"
+                                             alt="Classic Wedding Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Classic Wedding</h5>
+                                        <span>Elegant multi-layer wedding cake with smooth cream frosting.</span>
+                                        <h5 class="text-primary mt-2">₹1,499</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-2.jpg"
+                                             alt="Red Velvet Wedding Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Red Velvet Wedding</h5>
+                                        <span>Premium red velvet layers with cream cheese frosting for weddings.</span>
+                                        <h5 class="text-primary mt-2">₹1,999</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-3.jpg"
+                                             alt="Premium Chocolate Wedding Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Premium Chocolate Wedding</h5>
+                                        <span>Rich chocolate layers finished with premium chocolate decorations.</span>
+                                        <h5 class="text-primary mt-2">₹2,499</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-4.jpg"
+                                             alt="Floral Wedding Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Floral Wedding</h5>
+                                        <span>Beautiful wedding cake decorated with elegant floral-style designs.</span>
+                                        <h5 class="text-primary mt-2">₹2,999</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-5.jpg"
+                                             alt="Designer Wedding Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Designer Wedding</h5>
+                                        <span>Premium designer cake created for elegant wedding celebrations.</span>
+                                        <h5 class="text-primary mt-2">₹3,499</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-6.jpg"
+                                             alt="Royal Celebration Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Royal Celebration</h5>
+                                        <span>Luxury multi-tier cake with premium decoration for grand celebrations.</span>
+                                        <h5 class="text-primary mt-2">₹3,999</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- Custom Cakes -->
+                    <div id="tab-3" class="tab-pane fade">
+
+                        <div class="row g-3">
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-1.jpg"
+                                             alt="Custom Photo Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Custom Photo Cake</h5>
+                                        <span>Add your favourite photo to create a personalised celebration cake.</span>
+                                        <h5 class="text-primary mt-2">₹599+</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-2.jpg"
+                                             alt="Custom Theme Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Custom Theme Cake</h5>
+                                        <span>Theme-based cake designs created according to your celebration.</span>
+                                        <h5 class="text-primary mt-2">₹799+</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-3.jpg"
+                                             alt="Designer Custom Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Designer Custom</h5>
+                                        <span>Creative designer cake with personalised decorations and details.</span>
+                                        <h5 class="text-primary mt-2">₹999+</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-4.jpg"
+                                             alt="Photo and Theme Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Photo & Theme</h5>
+                                        <span>A personalised photo cake combined with your preferred celebration theme.</span>
+                                        <h5 class="text-primary mt-2">₹1,199+</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-5.jpg"
+                                             alt="Premium Custom Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Premium Custom</h5>
+                                        <span>Premium customised cake designed for important and special occasions.</span>
+                                        <h5 class="text-primary mt-2">₹1,499+</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="d-flex h-100">
+                                    <div class="flex-shrink-0">
+                                        <img class="img-fluid" src="img/cake-6.jpg"
+                                             alt="Fully Customised Cake"
+                                             style="width: 150px; height: 150px;">
+                                    </div>
+
+                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
+                                        <h5 class="text-uppercase">Fully Customised</h5>
+                                        <span>Your cake, your design — customised according to your requirements.</span>
+                                        <h5 class="text-primary mt-2">₹599+</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products End -->
+
+
+    <!-- Services Start -->
+    <div class="container-fluid service position-relative px-5 mt-5"
+         style="margin-bottom: 135px;">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-primary border-inner text-center text-white p-5">
+
+                        <h4 class="text-uppercase mb-3">
+                            Birthday Cake
+                        </h4>
+
+                        <p>
+                            Choose from chocolate, vanilla, red velvet, black forest,
+                            butterscotch and strawberry cakes. Prices start from ₹299.
+                        </p>
+
+                        <a class="text-uppercase text-dark" href="menu.html">
+                            View Menu <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-primary border-inner text-center text-white p-5">
+
+                        <h4 class="text-uppercase mb-3">
+                            Wedding Cake
+                        </h4>
+
+                        <p>
+                            Elegant multi-tier wedding cakes with premium designs,
+                            flavours and decorations. Prices start from ₹1,499.
+                        </p>
+
+                        <a class="text-uppercase text-dark" href="menu.html">
+                            View Menu <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="bg-primary border-inner text-center text-white p-5">
+
+                        <h4 class="text-uppercase mb-3">
+                            Custom Cake
+                        </h4>
+
+                        <p>
+                            Create a personalised cake based on your favourite photo,
+                            theme, design or celebration. Starting from ₹599+.
+                        </p>
+
+                        <a class="text-uppercase text-dark" href="contact.html">
+                            Order Custom <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-12 col-md-6">
+                    <div class="bg-img bg-overlay text-center p-5">
+
+                        <h1 class="text-white mb-4">
+                            Freshly Baked Cakes For Every Celebration
+                        </h1>
+
+                        <p class="text-white">
+                            Birthday, wedding or custom — choose a cake made especially
+                            for your special occasion.
+                        </p>
+
+                        <a href="menu.html"
+                           class="btn btn-primary border-inner py-3 px-5">
+                            Explore Menu
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+
+            <div class="section-title position-relative text-center mx-auto mb-5 pb-3"
+                 style="max-width: 600px;">
+
+                <h2 class="text-primary font-secondary">Our Chefs</h2>
+
+                <h1 class="display-4 text-uppercase">
+                    Meet Our Cake Experts
+                </h1>
+
+            </div>
+
+
+            <div class="row g-5">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-item">
+
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100"
+                                 src="img/team-1.jpg"
+                                 alt="Chef Daniel">
+                        </div>
+
+                        <div class="bg-dark border-inner text-center p-4">
+                            <h4 class="text-uppercase text-primary">
+                                Chef Daniel
+                            </h4>
+
+                            <p class="text-white m-0">
+                                Head Pastry Chef
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-item">
+
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100"
+                                 src="img/team-2.jpg"
+                                 alt="Chef Sophia">
+                        </div>
+
+                        <div class="bg-dark border-inner text-center p-4">
+                            <h4 class="text-uppercase text-primary">
+                                Chef Sophia
+                            </h4>
+
+                            <p class="text-white m-0">
+                                Cake Decoration Specialist
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-item">
+
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid w-100"
+                                 src="img/team-3.jpg"
+                                 alt="Chef Michael">
+                        </div>
+
+                        <div class="bg-dark border-inner text-center p-4">
+                            <h4 class="text-uppercase text-primary">
+                                Chef Michael
+                            </h4>
+
+                            <p class="text-white m-0">
+                                Custom Cake Specialist
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Offer Start -->
+    <div class="container-fluid bg-offer my-5 py-5">
+        <div class="container py-5">
+
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-7 text-center">
+
+                    <div class="section-title position-relative text-center mx-auto mb-4 pb-3"
+                         style="max-width: 600px;">
+
+                        <h2 class="text-primary font-secondary">
+                            Featured Cakes
+                        </h2>
+
+                        <h1 class="display-4 text-uppercase text-white">
+                            Cakes For Every Celebration
+                        </h1>
+
+                    </div>
+
+                    <p class="text-white mb-4">
+                        Enjoy freshly baked cakes prepared with quality ingredients.
+                        Choose from birthday, wedding and customised designs made
+                        according to your occasion.
+                    </p>
+
+                    <a href="menu.html"
+                       class="btn btn-primary border-inner py-3 px-5 me-3">
+                        View Menu
+                    </a>
+
+                    <a href="contact.html"
+                       class="btn btn-dark border-inner py-3 px-5">
+                        Order Now
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Offer End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+
+            <div class="section-title position-relative text-center mx-auto mb-5 pb-3"
+                 style="max-width: 600px;">
+
+                <h2 class="text-primary font-secondary">
+                    Testimonials
+                </h2>
+
+                <h1 class="display-4 text-uppercase">
+                    Our Customers Say
+                </h1>
+
+            </div>
+
+
+            <div class="owl-carousel testimonial-carousel">
+
+                <div class="testimonial-item bg-light border-inner p-4">
+
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid flex-shrink-0"
+                             src="img/testimonial-1.jpg"
+                             style="width: 50px; height: 50px;"
+                             alt="Priya Sharma">
+
+                        <div class="ps-3">
+                            <h5 class="text-uppercase mb-1">
+                                Priya Sharma
+                            </h5>
+
+                            <span>Birthday Customer</span>
+                        </div>
+                    </div>
+
+                    <p class="mb-0">
+                        The chocolate cake was fresh, soft and delicious.
+                        The design was exactly what I wanted for the birthday.
+                    </p>
+
+                </div>
+
+
+                <div class="testimonial-item bg-light border-inner p-4">
+
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid flex-shrink-0"
+                             src="img/testimonial-2.jpg"
+                             style="width: 50px; height: 50px;"
+                             alt="Rahul Mehta">
+
+                        <div class="ps-3">
+                            <h5 class="text-uppercase mb-1">
+                                Rahul Mehta
+                            </h5>
+
+                            <span>Wedding Customer</span>
+                        </div>
+                    </div>
+
+                    <p class="mb-0">
+                        The wedding cake looked beautiful and tasted amazing.
+                        The presentation was perfect for our celebration.
+                    </p>
+
+                </div>
+
+
+                <div class="testimonial-item bg-light border-inner p-4">
+
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid flex-shrink-0"
+                             src="img/testimonial-3.jpg"
+                             style="width: 50px; height: 50px;"
+                             alt="Ananya Rao">
+
+                        <div class="ps-3">
+                            <h5 class="text-uppercase mb-1">
+                                Ananya Rao
+                            </h5>
+
+                            <span>Custom Cake Customer</span>
+                        </div>
+                    </div>
+
+                    <p class="mb-0">
+                        I ordered a customised theme cake and the final design
+                        looked exactly as requested. Great attention to detail.
+                    </p>
+
+                </div>
+
+
+                <div class="testimonial-item bg-light border-inner p-4">
+
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid flex-shrink-0"
+                             src="img/testimonial-4.jpg"
+                             style="width: 50px; height: 50px;"
+                             alt="Arjun Kumar">
+
+                        <div class="ps-3">
+                            <h5 class="text-uppercase mb-1">
+                                Arjun Kumar
+                            </h5>
+
+                            <span>Regular Customer</span>
+                        </div>
+                    </div>
+
+                    <p class="mb-0">
+                        CakeZone has a good variety of cakes and the ordering
+                        process is simple. The cakes are always fresh and tasty.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-secondary" style="margin-top: 90px;">
+
+        <div class="container">
+
+            <div class="row gx-5">
+
+                <div class="col-lg-4 col-md-6 footer-about">
+
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+
+                        <a href="index.html" class="navbar-brand">
+                            <h1 class="m-0 text-uppercase text-white">
+                                <i class="fa fa-birthday-cake fs-1 text-white me-3"></i>
+                                CakeZone
+                            </h1>
+                        </a>
+
+                        <p class="mt-3 mb-4 text-white">
+                            Freshly baked birthday, wedding and custom cakes
+                            made with care for every special occasion.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-8 col-md-6">
+
+                    <div class="row gx-5">
+
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+
+                            <h4 class="text-primary text-uppercase mb-4">
+                                Get In Touch
+                            </h4>
+
+                            <p class="mb-2">
+                                <i class="fa fa-map-marker-alt text-primary me-3"></i>
+                                Sapthagiri Layout, Munnekollal, Marathahalli,
+                                Bengaluru, Karnataka
+                            </p>
+
+                            <p class="mb-2">
+                                <i class="fa fa-envelope text-primary me-3"></i>
+                                tajinder5678912@gmail.com
+                            </p>
+
+                            <p class="mb-0">
+                                <i class="fa fa-phone-alt text-primary me-3"></i>
+                                +91 7402300022
+                            </p>
+
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+
+                            <h4 class="text-primary text-uppercase mb-4">
+                                Quick Links
+                            </h4>
+
+                            <div class="d-flex flex-column justify-content-start">
+
+                                <a class="text-secondary mb-2" href="index.html">
+                                    <i class="fa fa-angle-right text-primary me-2"></i>
+                                    Home
+                                </a>
+
+                                <a class="text-secondary mb-2" href="about.html">
+                                    <i class="fa fa-angle-right text-primary me-2"></i>
+                                    About
+                                </a>
+
+                                <a class="text-secondary mb-2" href="menu.html">
+                                    <i class="fa fa-angle-right text-primary me-2"></i>
+                                    Menu
+                                </a>
+
+                                <a class="text-secondary mb-2" href="team.html">
+                                    <i class="fa fa-angle-right text-primary me-2"></i>
+                                    Chefs
+                                </a>
+
+                                <a class="text-secondary mb-2" href="testimonial.html">
+                                    <i class="fa fa-angle-right text-primary me-2"></i>
+                                    Testimonials
+                                </a>
+
+                                <a class="text-secondary" href="contact.html">
+                                    <i class="fa fa-angle-right text-primary me-2"></i>
+                                    Contact
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+
+                            <h4 class="text-primary text-uppercase mb-4">
+                                Follow Us
+                            </h4>
+
+                            <p>
+                                Stay connected with CakeZone for new cake designs,
+                                custom orders and updates.
+                            </p>
+
+                            <div class="d-flex">
+
+                                <a class="btn btn-square btn-primary me-2" href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+
+                                <a class="btn btn-square btn-primary me-2" href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+
+                                <a class="btn btn-square btn-primary me-2" href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="container-fluid text-center py-4"
+             style="background: #111111;">
+
+            <p class="mb-0">
+                &copy; 2026 <strong>CakeZone</strong>. All Rights Reserved.
+                Designed by Tajinder Singh.
+            </p>
+
+        </div>
+
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
