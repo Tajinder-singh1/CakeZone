@@ -1,9 +1,51 @@
 /********** Template CSS **********/
+
 :root {
     --primary: #E88F2A;
     --secondary: #FAF3EB;
     --light: #FFFFFF;
     --dark: #2B2825;
+}
+
+/* ==============================
+   GLOBAL RESPONSIVE SETTINGS
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+iframe,
+video {
+    max-width: 100%;
+}
+
+.container,
+.container-fluid {
+    max-width: 100%;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
 }
 
 .font-secondary {
@@ -32,6 +74,7 @@ h6,
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
     transition: .5s;
+    white-space: normal;
 }
 
 .btn-primary {
@@ -80,6 +123,9 @@ h6,
     padding-left: 0;
     padding-right: 0;
     text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-to-top {
@@ -90,6 +136,10 @@ h6,
     border-radius: 0;
     z-index: 99;
 }
+
+/* ==============================
+   NAVBAR
+================================= */
 
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Oswald', sans-serif;
@@ -111,16 +161,32 @@ h6,
     color: var(--primary);
 }
 
-@media (max-width: 991.98px) {
-    .navbar-dark .navbar-nav .nav-link  {
-        padding: 10px 0;
-    }
-}
+/* ==============================
+   HERO
+================================= */
 
 .hero-header {
     background: url(../img/hero.jpg) top right no-repeat;
     background-size: cover;
+    background-position: center;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
 }
+
+.hero-header .container {
+    width: 100%;
+}
+
+.hero-header h1,
+.hero-header h2,
+.hero-header h3 {
+    word-wrap: break-word;
+}
+
+/* ==============================
+   PLAY BUTTON
+================================= */
 
 .btn-play {
     position: relative;
@@ -189,22 +255,35 @@ h6,
     }
 }
 
+/* ==============================
+   VIDEO MODAL
+================================= */
+
 #videoModal .modal-dialog {
     position: relative;
+    width: calc(100% - 30px);
     max-width: 800px;
     margin: 60px auto 0 auto;
 }
 
 #videoModal .modal-body {
     position: relative;
-    padding: 0px;
+    padding: 0;
+}
+
+#videoModal .modal-body iframe,
+#videoModal .modal-body video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 400px;
 }
 
 #videoModal .close {
     position: absolute;
     width: 30px;
     height: 30px;
-    right: 0px;
+    right: 0;
     top: -30px;
     z-index: 999;
     font-size: 30px;
@@ -212,6 +291,15 @@ h6,
     color: #FFFFFF;
     background: #000000;
     opacity: 1;
+    border: 0;
+}
+
+/* ==============================
+   SECTION TITLE
+================================= */
+
+.section-title {
+    position: relative;
 }
 
 .section-title::before {
@@ -236,6 +324,15 @@ h6,
     background: var(--primary);
 }
 
+/* ==============================
+   SERVICE / CONTACT
+================================= */
+
+.service,
+.contact {
+    position: relative;
+}
+
 .service::after,
 .contact::after {
     position: absolute;
@@ -244,28 +341,54 @@ h6,
     height: calc(100% - 45px);
     top: 135px;
     left: 0;
-    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9)), url(../img/service.jpg) center center no-repeat;
+    background: linear-gradient(
+        rgba(43, 40, 37, .9),
+        rgba(43, 40, 37, .9)
+    ),
+    url(../img/service.jpg) center center no-repeat;
     background-size: cover;
     z-index: -1;
 }
 
 .contact::after {
-    background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
+    background: linear-gradient(
+        rgba(43, 40, 37, .5),
+        rgba(43, 40, 37, .5)
+    ),
+    url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
 }
 
+/* ==============================
+   OFFER
+================================= */
+
 .bg-offer {
-    background: linear-gradient(rgba(43, 40, 37, .9), rgba(43, 40, 37, .9)), url(../img/offer.jpg) center center no-repeat;
+    background: linear-gradient(
+        rgba(43, 40, 37, .9),
+        rgba(43, 40, 37, .9)
+    ),
+    url(../img/offer.jpg) center center no-repeat;
     background-size: cover;
+}
+
+/* ==============================
+   TEAM
+================================= */
+
+.team-item {
+    overflow: hidden;
 }
 
 .team-item img {
+    width: 100%;
+    height: auto;
     transition: .5s;
 }
 
 .team-item:hover img {
     transform: scale(1.1);
-    filter: blur(5px)
+    filter: blur(5px);
 }
 
 .team-item .team-overlay {
@@ -276,6 +399,10 @@ h6,
 .team-item:hover .team-overlay {
     opacity: 1;
 }
+
+/* ==============================
+   TESTIMONIAL
+================================= */
 
 .testimonial-carousel .owl-dots {
     height: 45px;
@@ -309,7 +436,558 @@ h6,
     opacity: 1;
 }
 
+/* ==============================
+   BACKGROUND IMAGE
+================================= */
+
 .bg-img {
-    background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(../img/bg.jpg) center center no-repeat;
+    background: linear-gradient(
+        rgba(43, 40, 37, .5),
+        rgba(43, 40, 37, .5)
+    ),
+    url(../img/bg.jpg) center center no-repeat;
     background-size: cover;
+}
+
+/* =========================================================
+   TABLET
+   768px - 991.98px
+========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .sticky-top.navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+
+    .hero-header {
+        min-height: 450px;
+        background-position: center;
+    }
+
+    .hero-header h1 {
+        font-size: 42px;
+    }
+
+    .hero-header h2 {
+        font-size: 30px;
+    }
+
+    .section-title h1,
+    .section-title h2 {
+        font-size: 34px;
+    }
+
+    .service::after,
+    .contact::after {
+        top: 100px;
+        height: calc(100% - 30px);
+    }
+
+    .team-item:hover img {
+        transform: none;
+        filter: none;
+    }
+
+    .team-item .team-overlay {
+        opacity: 1;
+    }
+
+    #videoModal .modal-dialog {
+        margin-top: 50px;
+    }
+
+    #videoModal .modal-body iframe,
+    #videoModal .modal-body video {
+        min-height: 350px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   576px - 767.98px
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+    }
+
+    /* Navbar */
+
+    .navbar-dark .navbar-brand {
+        max-width: 75%;
+    }
+
+    .navbar-dark .navbar-brand img {
+        max-width: 180px;
+        height: auto;
+    }
+
+    .navbar-dark .navbar-nav {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 0;
+        font-size: 16px;
+    }
+
+    /* Hero */
+
+    .hero-header {
+        min-height: 420px;
+        padding: 70px 0;
+        text-align: center;
+        background-position: center;
+    }
+
+    .hero-header h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+
+    .hero-header h2 {
+        font-size: 26px;
+    }
+
+    .hero-header p {
+        font-size: 15px;
+    }
+
+    .hero-header .btn {
+        margin: 5px 2px;
+    }
+
+    /* Play button */
+
+    .btn-play {
+        margin: 20px auto;
+    }
+
+    /* Section */
+
+    .section-title {
+        margin-bottom: 35px !important;
+    }
+
+    .section-title::before {
+        width: 50px;
+        margin-left: -25px;
+    }
+
+    .section-title::after {
+        width: 150px;
+        margin-left: -75px;
+    }
+
+    /* Service */
+
+    .service::after,
+    .contact::after {
+        top: 80px;
+        height: calc(100% - 20px);
+    }
+
+    /* Team */
+
+    .team-item {
+        margin-bottom: 25px;
+    }
+
+    .team-item:hover img {
+        transform: none;
+        filter: none;
+    }
+
+    .team-item .team-overlay {
+        opacity: 1;
+    }
+
+    /* Testimonials */
+
+    .testimonial-carousel .owl-dots {
+        margin-top: 20px;
+    }
+
+    /* Video */
+
+    #videoModal .modal-dialog {
+        width: calc(100% - 20px);
+        margin: 45px auto 0;
+    }
+
+    #videoModal .modal-body iframe,
+    #videoModal .modal-body video {
+        min-height: 250px;
+    }
+
+    #videoModal .close {
+        top: -35px;
+    }
+
+    /* Background */
+
+    .bg-offer,
+    .bg-img {
+        background-position: center;
+    }
+
+    /* Back to top */
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   Below 576px
+========================================================= */
+
+@media (max-width: 575.98px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    h1 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    h2 {
+        font-size: 25px;
+        line-height: 1.25;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 19px;
+    }
+
+    h5 {
+        font-size: 17px;
+    }
+
+    /* Buttons */
+
+    .btn {
+        width: auto;
+        max-width: 100%;
+        padding: 9px 15px;
+        font-size: 14px;
+    }
+
+    /* Navbar */
+
+    .navbar-dark .navbar-brand img {
+        max-width: 150px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 7px 0;
+        font-size: 15px;
+    }
+
+    /* Hero */
+
+    .hero-header {
+        min-height: 390px;
+        padding: 60px 0;
+        background-position: center center;
+    }
+
+    .hero-header h1 {
+        font-size: 30px;
+    }
+
+    .hero-header h2 {
+        font-size: 23px;
+    }
+
+    .hero-header p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .hero-header .btn {
+        display: inline-block;
+        margin: 4px 2px;
+    }
+
+    /* Section title */
+
+    .section-title {
+        margin-bottom: 30px !important;
+    }
+
+    .section-title::before {
+        width: 45px;
+        height: 8px;
+        margin-left: -22.5px;
+    }
+
+    .section-title::after {
+        width: 130px;
+        margin-left: -65px;
+    }
+
+    /* Service / Contact */
+
+    .service::after,
+    .contact::after {
+        top: 65px;
+        height: calc(100% - 10px);
+    }
+
+    /* Cards */
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Team */
+
+    .team-item {
+        margin-bottom: 20px;
+    }
+
+    .team-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Video */
+
+    #videoModal .modal-dialog {
+        width: calc(100% - 16px);
+        margin: 45px auto 0;
+    }
+
+    #videoModal .modal-body iframe,
+    #videoModal .modal-body video {
+        min-height: 200px;
+    }
+
+    /* Play */
+
+    .btn-play {
+        transform: scale(.85);
+    }
+
+    /* Back to top */
+
+    .back-to-top {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    /* Prevent long text from breaking layout */
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    span {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   Below 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .container,
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .hero-header {
+        min-height: 360px;
+        padding: 50px 0;
+    }
+
+    .hero-header h1 {
+        font-size: 27px;
+    }
+
+    .hero-header h2 {
+        font-size: 21px;
+    }
+
+    .btn {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .navbar-dark .navbar-brand img {
+        max-width: 135px;
+    }
+
+    .section-title::after {
+        width: 110px;
+        margin-left: -55px;
+    }
+
+    .section-title::before {
+        width: 40px;
+        margin-left: -20px;
+    }
+
+    #videoModal .modal-body iframe,
+    #videoModal .modal-body video {
+        min-height: 180px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE FORMS
+========================================================= */
+
+input,
+textarea,
+select {
+    max-width: 100%;
+}
+
+.form-control {
+    width: 100%;
+    max-width: 100%;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* =========================================================
+   RESPONSIVE TABLES
+========================================================= */
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    max-width: 100%;
+}
+
+/* =========================================================
+   RESPONSIVE FOOTER
+========================================================= */
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer a {
+    overflow-wrap: break-word;
+}
+
+/* =========================================================
+   PREVENT HORIZONTAL OVERFLOW
+========================================================= */
+
+section,
+header,
+footer,
+nav,
+main,
+article,
+aside {
+    max-width: 100%;
+}
+
+.row {
+    max-width: 100%;
+}
+
+[class*="col-"] {
+    min-width: 0;
+}
+
+/* Fix oversized elements */
+
+iframe,
+embed,
+object,
+svg {
+    max-width: 100%;
 }
