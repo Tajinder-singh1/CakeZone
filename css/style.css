@@ -991,3 +991,120 @@ object,
 svg {
     max-width: 100%;
 }
+/* =========================================
+   CAKEZONE ADVERTISEMENT SECTION
+   ========================================= */
+
+.cakezone-ad-section {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.cakezone-ad-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+.cakezone-ad-label {
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* 160 x 300 Banner */
+.cakezone-banner-ad {
+    width: 160px;
+    min-width: 160px;
+}
+
+.cakezone-banner-container {
+    width: 160px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cakezone-banner-container iframe {
+    width: 160px !important;
+    height: 300px !important;
+    max-width: 160px !important;
+    border: 0 !important;
+    display: block;
+}
+
+
+/* Native Banner */
+.cakezone-native-ad {
+    width: 100%;
+    max-width: 728px;
+}
+
+.cakezone-native-container {
+    width: 100%;
+    max-width: 728px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .cakezone-ad-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px 5px;
+    }
+
+    .cakezone-banner-ad {
+        width: 160px;
+        min-width: 160px;
+    }
+
+    .cakezone-native-ad {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cakezone-native-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    .cakezone-ad-section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cakezone-native-container {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+}
