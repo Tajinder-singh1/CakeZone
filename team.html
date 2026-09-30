@@ -1,561 +1,97 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>CakeZone - Master Chefs</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+<meta charset="utf-8">
+<title>CakeZone — Master Chefs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Meet the CakeZone master chefs and cake specialists.">
+<link rel="icon" href="img/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+<style>
+:root{--ink:#090909;--ink2:#111;--bone:#f2eee7;--muted:#aaa49a;--red:#e43b27;--line:rgba(242,238,231,.15);--panel:#151515}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--bone);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}.kage-nav{position:fixed;z-index:1000;top:0;left:0;right:0;height:76px;border-bottom:1px solid var(--line);background:rgba(9,9,9,.78);backdrop-filter:blur(16px);display:flex;align-items:center;padding:0 5vw}
+.logo{font-family:"Space Grotesk";font-size:22px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.logo span{color:var(--red)}
+.nav-links{margin-left:auto;display:flex;gap:28px;align-items:center;font-size:13px;text-transform:uppercase;letter-spacing:.08em}.nav-links a{color:#bbb;transition:.25s}.nav-links a:hover,.nav-links .active{color:#fff}.nav-links .active:after{content:"";display:block;width:18px;height:2px;background:var(--red);margin-top:5px}
+.menu-btn{display:none;margin-left:auto;background:none;border:0;color:white;font-size:25px}
+.hero{min-height:72vh;padding:150px 7vw 90px;display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero:before{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(228,59,39,.2);border-radius:50%;right:-170px;top:100px}.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(242,238,231,.08);border-radius:50%;right:-65px;top:200px}
+.eyebrow{color:var(--red);font-size:12px;letter-spacing:.25em;text-transform:uppercase;margin-bottom:22px}.hero h1{font-family:"Space Grotesk";font-size:clamp(60px,10vw,145px);line-height:.85;letter-spacing:-.06em;margin:0;max-width:900px;text-transform:uppercase}.hero h1 em{font-style:normal;color:var(--red)}.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:45px;max-width:1000px}.hero p{color:var(--muted);max-width:500px;line-height:1.8;margin:0}.chapter{font-size:11px;letter-spacing:.2em;color:#777}
+.section{padding:110px 7vw}.section-head{display:grid;grid-template-columns:120px 1fr;gap:35px;margin-bottom:65px}.num{font-family:"Space Grotesk";font-size:14px;color:var(--red);letter-spacing:.15em;padding-top:10px}.section-head h2{font-family:"Space Grotesk";font-size:clamp(40px,6vw,78px);line-height:.95;text-transform:uppercase;letter-spacing:-.05em;margin:0}.section-head p{color:var(--muted);max-width:560px;line-height:1.8;margin-top:25px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.chef{background:var(--panel);border:1px solid var(--line);position:relative;overflow:hidden;transition:transform .35s,border-color .35s}.chef:hover{transform:translateY(-8px);border-color:rgba(228,59,39,.6)}.chef-image{aspect-ratio:4/5;overflow:hidden;position:relative}.chef-image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(20%);transition:transform .6s,filter .6s}.chef:hover img{transform:scale(1.05);filter:grayscale(0)}.chef-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.65))}
+.chef-index{position:absolute;z-index:2;top:18px;left:18px;font-size:11px;letter-spacing:.18em;color:#ddd}.chef-info{padding:25px 25px 28px;border-top:1px solid var(--line)}.chef-name{font-family:"Space Grotesk";font-size:25px;text-transform:uppercase;letter-spacing:-.03em;margin:0 0 8px}.role{color:var(--red);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.social{display:flex;gap:8px;margin-top:22px}.social a{width:36px;height:36px;border:1px solid var(--line);display:grid;place-items:center;color:#999;transition:.25s}.social a:hover{color:#fff;border-color:var(--red);background:var(--red)}
+.manifesto{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 7vw;display:grid;grid-template-columns:1fr 1fr;gap:60px;background:linear-gradient(110deg,#0d0d0d,#14110f)}.manifesto h3{font-family:"Space Grotesk";font-size:clamp(34px,5vw,65px);line-height:.98;text-transform:uppercase;margin:0;letter-spacing:-.04em}.manifesto h3 span{color:var(--red)}.manifesto p{color:var(--muted);line-height:1.9;margin:0;align-self:center}.cta{padding:100px 7vw;text-align:center}.cta small{color:var(--red);text-transform:uppercase;letter-spacing:.2em}.cta h2{font-family:"Space Grotesk";font-size:clamp(42px,7vw,90px);line-height:.9;text-transform:uppercase;letter-spacing:-.05em;margin:20px 0 35px}.btn{display:inline-flex;padding:15px 27px;border:1px solid var(--red);color:#fff;text-transform:uppercase;font-size:12px;letter-spacing:.12em;transition:.25s}.btn:hover{background:var(--red)}
+footer{border-top:1px solid var(--line);padding:55px 7vw 30px;color:var(--muted)}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px}.footer-title{font-family:"Space Grotesk";color:#fff;text-transform:uppercase;font-size:18px;margin-bottom:18px}.footer-brand{font-size:28px;color:#fff;font-family:"Space Grotesk";font-weight:700}.footer-brand span{color:var(--red)}footer p{line-height:1.8;font-size:14px}footer a:hover{color:#fff}.copyright{border-top:1px solid var(--line);margin-top:40px;padding-top:20px;font-size:12px;display:flex;justify-content:space-between}.top{position:fixed;right:22px;bottom:22px;width:45px;height:45px;border:1px solid var(--line);background:#111;color:#fff;display:grid;place-items:center}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){.nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#0b0b0b;border-bottom:1px solid var(--line);padding:20px 7vw;flex-direction:column;align-items:flex-start;gap:20px}.nav-links.open{display:flex}.menu-btn{display:block}.hero{min-height:65vh;padding-top:130px}.section-head{grid-template-columns:1fr;gap:10px}.team-grid{grid-template-columns:1fr 1fr}.manifesto{grid-template-columns:1fr;gap:35px}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.hero{padding:125px 6vw 65px}.hero h1{font-size:57px}.hero-bottom{display:block}.chapter{margin-top:30px}.section{padding:75px 6vw}.team-grid{grid-template-columns:1fr}.manifesto{padding:70px 6vw}.cta{padding:75px 6vw}.footer-grid{grid-template-columns:1fr}.copyright{display:block;line-height:1.8}}
+</style>
 </head>
-
 <body>
-
-    <!-- Topbar Start -->
-    <div class="container-fluid px-0 d-none d-lg-block">
-        <div class="row gx-0">
-
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <i class="bi bi-envelope fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Email Us</h6>
-                        <span>tajinder5678912@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 text-center bg-primary border-inner py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="m-0 text-uppercase text-white">
-                            <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>CakeZone
-                        </h1>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Call Us</h6>
-                        <span>+91 7402300022</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-white">
-                <i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone
-            </h1>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto mx-lg-auto py-0">
-
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="menu.html" class="nav-item nav-link">Menu & Pricing</a>
-                <a href="team.html" class="nav-item nav-link active">Master Chefs</a>
-
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                        Pages
-                    </a>
-
-                    <div class="dropdown-menu m-0">
-                        <a href="service.html" class="dropdown-item">Our Service</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
-
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-dark bg-img p-5 mb-5">
-        <div class="row">
-            <div class="col-12 text-center">
-
-                <h1 class="display-4 text-uppercase text-white">
-                    Master Chefs
-                </h1>
-
-                <a href="index.html">Home</a>
-
-                <i class="far fa-square text-primary px-2"></i>
-
-                <a href="team.html">Master Chefs</a>
-
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-
-    <!-- Team Start -->
-    <div class="container-fluid py-5">
-
-        <div class="container">
-
-            <div class="section-title position-relative text-center mx-auto mb-5 pb-3"
-                style="max-width: 600px;">
-
-                <h2 class="text-primary font-secondary">
-                    Our Team
-                </h2>
-
-                <h1 class="display-4 text-uppercase">
-                    Our Master Chefs
-                </h1>
-
-            </div>
-
-
-            <div class="row g-5">
-
-
-                <!-- Chef 1 -->
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="team-item">
-
-                        <div class="position-relative overflow-hidden">
-
-                            <img class="img-fluid w-100"
-                                src="img/team-1.jpg"
-                                alt="Master Chef">
-
-                            <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
-
-                                <div class="d-flex align-items-center justify-content-start">
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-twitter fw-normal"></i>
-                                    </a>
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-facebook-f fw-normal"></i>
-                                    </a>
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-linkedin-in fw-normal"></i>
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="bg-dark border-inner text-center p-4">
-
-                            <h4 class="text-uppercase text-primary">
-                                Chef Daniel
-                            </h4>
-
-                            <p class="text-white m-0">
-                                Head Pastry Chef
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Chef 2 -->
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="team-item">
-
-                        <div class="position-relative overflow-hidden">
-
-                            <img class="img-fluid w-100"
-                                src="img/team-2.jpg"
-                                alt="Master Chef">
-
-                            <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
-
-                                <div class="d-flex align-items-center justify-content-start">
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-twitter fw-normal"></i>
-                                    </a>
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-facebook-f fw-normal"></i>
-                                    </a>
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-linkedin-in fw-normal"></i>
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="bg-dark border-inner text-center p-4">
-
-                            <h4 class="text-uppercase text-primary">
-                                Chef Sophia
-                            </h4>
-
-                            <p class="text-white m-0">
-                                Cake Decoration Specialist
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Chef 3 -->
-                <div class="col-lg-4 col-md-6">
-
-                    <div class="team-item">
-
-                        <div class="position-relative overflow-hidden">
-
-                            <img class="img-fluid w-100"
-                                src="img/team-3.jpg"
-                                alt="Master Chef">
-
-                            <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
-
-                                <div class="d-flex align-items-center justify-content-start">
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-twitter fw-normal"></i>
-                                    </a>
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-facebook-f fw-normal"></i>
-                                    </a>
-
-                                    <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1"
-                                        href="#">
-                                        <i class="fab fa-linkedin-in fw-normal"></i>
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="bg-dark border-inner text-center p-4">
-
-                            <h4 class="text-uppercase text-primary">
-                                Chef Michael
-                            </h4>
-
-                            <p class="text-white m-0">
-                                Custom Cake Specialist
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-    <!-- Team End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark bg-img text-secondary"
-        style="margin-top: 90px">
-
-        <div class="container">
-
-            <div class="row gx-5">
-
-
-                <!-- Brand -->
-                <div class="col-lg-4 col-md-6 mt-lg-n5">
-
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
-
-                        <a href="index.html" class="navbar-brand">
-
-                            <h1 class="m-0 text-uppercase text-white">
-                                <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>
-                                CakeZone
-                            </h1>
-
-                        </a>
-
-                        <p class="mt-3">
-                            Freshly baked cakes for birthdays, weddings and special occasions.
-                            CakeZone offers delicious flavours, beautiful designs and
-                            customised cakes made for every celebration.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="col-lg-8 col-md-6">
-
-                    <div class="row gx-5">
-
-
-                        <!-- Contact -->
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-
-                            <h4 class="text-primary text-uppercase mb-4">
-                                Get In Touch
-                            </h4>
-
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">
-                                    Sapthagiri Layout, Munnekollal,
-                                    Marathahalli, Bengaluru, Karnataka
-                                </p>
-                            </div>
-
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">
-                                    tajinder5678912@gmail.com
-                                </p>
-                            </div>
-
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-telephone text-primary me-2"></i>
-                                <p class="mb-0">
-                                    +91 7402300022
-                                </p>
-                            </div>
-
-                            <div class="d-flex mt-4">
-
-                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2"
-                                    href="#">
-                                    <i class="fab fa-twitter fw-normal"></i>
-                                </a>
-
-                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2"
-                                    href="#">
-                                    <i class="fab fa-facebook-f fw-normal"></i>
-                                </a>
-
-                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2"
-                                    href="#">
-                                    <i class="fab fa-linkedin-in fw-normal"></i>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Quick Links -->
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-
-                            <h4 class="text-primary text-uppercase mb-4">
-                                Quick Links
-                            </h4>
-
-                            <div class="d-flex flex-column justify-content-start">
-
-                                <a class="text-secondary mb-2" href="index.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
-                                    Home
-                                </a>
-
-                                <a class="text-secondary mb-2" href="about.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
-                                    About Us
-                                </a>
-
-                                <a class="text-secondary mb-2" href="service.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
-                                    Our Services
-                                </a>
-
-                                <a class="text-secondary mb-2" href="team.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
-                                    Meet The Team
-                                </a>
-
-                                <a class="text-secondary mb-2" href="menu.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
-                                    Menu & Pricing
-                                </a>
-
-                                <a class="text-secondary" href="contact.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
-                                    Contact Us
-                                </a>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Newsletter -->
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-
-                            <h4 class="text-primary text-uppercase mb-4">
-                                Newsletter
-                            </h4>
-
-                            <p>
-                                Get updates about new cake flavours, special offers
-                                and custom cake collections from CakeZone.
-                            </p>
-
-                            <form action="">
-
-                                <div class="input-group">
-
-                                    <input type="text"
-                                        class="form-control border-white p-3"
-                                        placeholder="Your Email">
-
-                                    <button class="btn btn-primary">
-                                        Sign Up
-                                    </button>
-
-                                </div>
-
-                            </form>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Copyright -->
-    <div class="container-fluid text-secondary py-4"
-        style="background: #111111;">
-
-        <div class="container text-center">
-
-            <p class="mb-0">
-
-                &copy;
-
-                <a class="text-white border-bottom" href="#">
-                    CakeZone
-                </a>.
-
-                All Rights Reserved.
-
-                <!--
-                *** The author's attribution link must remain intact in the template. ***
-                *** If you wish to remove this credit link, please purchase the Pro Version. ***
-                -->
-
-                Designed by
-                <a class="text-white border-bottom"
-                    href="https://htmlcodex.com">
-                    HTML Codex
-                </a>
-
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- Back to Top -->
-    <a href="#"
-        class="btn btn-primary border-inner py-3 fs-4 back-to-top">
-
-        <i class="bi bi-arrow-up"></i>
-
-    </a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="lib/easing/easing.min.js"></script>
-
-    <script src="lib/waypoints/waypoints.min.js"></script>
-
-    <script src="lib/counterup/counterup.min.js"></script>
-
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
+<nav class="kage-nav">
+<a class="logo" href="index.html"><i class="fa fa-birthday-cake"></i> Cake<span>Zone</span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a><a href="about.html">About Us</a><a href="menu.html">Menu & Pricing</a><a href="team.html" class="active">Master Chefs</a><a href="service.html">Services</a><a href="testimonial.html">Testimonials</a><a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<header class="hero">
+<div>
+<div class="eyebrow">CakeZone / The People Behind The Craft</div>
+<h1>Master<br><em>Chefs</em></h1>
+<div class="hero-bottom">
+<p>Meet the CakeZone team creating freshly baked cakes, detailed decorations and customised designs for every celebration.</p>
+<div class="chapter">CHAPTER 04 / 06</div>
+</div>
+</div>
+</header>
+
+<main>
+<section class="section">
+<div class="section-head reveal">
+<div class="num">04 — TEAM</div>
+<div><h2>The hands<br>behind the cake.</h2><p>Our master chefs bring together pastry skills, cake decoration and custom design to create memorable cakes for birthdays, weddings and special occasions.</p></div>
+</div>
+<div class="team-grid">
+<article class="chef reveal"><div class="chef-image"><span class="chef-index">01 / 03</span><img src="img/team-1.jpg" alt="Chef Daniel"></div><div class="chef-info"><h3 class="chef-name">Chef Daniel</h3><div class="role">Head Pastry Chef</div><div class="social"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div></article>
+<article class="chef reveal"><div class="chef-image"><span class="chef-index">02 / 03</span><img src="img/team-2.jpg" alt="Chef Sophia"></div><div class="chef-info"><h3 class="chef-name">Chef Sophia</h3><div class="role">Cake Decoration Specialist</div><div class="social"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div></article>
+<article class="chef reveal"><div class="chef-image"><span class="chef-index">03 / 03</span><img src="img/team-3.jpg" alt="Chef Michael"></div><div class="chef-info"><h3 class="chef-name">Chef Michael</h3><div class="role">Custom Cake Specialist</div><div class="social"><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div></article>
+</div>
+</section>
+
+<section class="manifesto reveal">
+<h3>Crafted with<br><span>precision.</span></h3>
+<p>From the first layer to the final decoration, CakeZone focuses on delicious flavours, beautiful designs and customised cakes made for every celebration.</p>
+</section>
+
+<section class="cta reveal">
+<small>Ready for your celebration?</small>
+<h2>Choose your<br>perfect cake.</h2>
+<a class="btn" href="menu.html">Explore Menu <i class="bi bi-arrow-right" style="margin-left:10px"></i></a>
+</section>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div><div class="footer-brand">Cake<span>Zone</span></div><p>Freshly baked cakes for birthdays, weddings and special occasions. CakeZone offers delicious flavours, beautiful designs and customised cakes made for every celebration.</p></div>
+<div><div class="footer-title">Get In Touch</div><p><i class="bi bi-geo-alt"></i> Sapthagiri Layout, Munnekollal, Marathahalli, Bengaluru, Karnataka</p><p><a href="mailto:tajinder5678912@gmail.com"><i class="bi bi-envelope"></i> tajinder5678912@gmail.com</a></p><p><a href="tel:+917402300022"><i class="bi bi-telephone"></i> +91 7402300022</a></p></div>
+<div><div class="footer-title">Quick Links</div><p><a href="index.html">Home</a></p><p><a href="about.html">About Us</a></p><p><a href="service.html">Our Services</a></p><p><a href="team.html">Meet The Team</a></p><p><a href="menu.html">Menu & Pricing</a></p><p><a href="contact.html">Contact Us</a></p></div>
+</div>
+<div class="copyright"><span>© CakeZone. All Rights Reserved.</span><span>Owned by Tajinder Singh</span></div>
+</footer>
+<a class="top" href="#" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
+<script>
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
 </body>
-
 </html>
