@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+
     <title>CakeZone - Contact Us</title>
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -17,138 +18,722 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
+    <!-- Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
+    <!-- Existing stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* =========================================================
+           CAKEZONE KAGE STYLE CONTACT PAGE
+           INFORMATION + FORM DATA PRESERVED
+        ========================================================= */
+
+        :root {
+            --ink: #080808;
+            --ink-light: #11100f;
+            --bone: #f1ede4;
+            --muted: #aaa39a;
+            --orange: #f28c18;
+            --orange-light: #ff9d2e;
+            --line: rgba(241, 237, 228, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.kage-contact-page {
+            margin: 0;
+            background: var(--ink) !important;
+            color: var(--bone);
+            font-family: "Open Sans", sans-serif;
+        }
+
+        /* =========================
+           TOP INFORMATION BAR
+        ========================= */
+
+        .kage-topbar {
+            background: #11100f;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .kage-topbar .top-item {
+            min-height: 110px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .kage-topbar .brand-box {
+            background: var(--orange);
+        }
+
+        .kage-topbar i {
+            color: var(--orange);
+            font-size: 38px;
+        }
+
+        .kage-topbar .brand-box i {
+            color: #111;
+        }
+
+        .kage-topbar h6 {
+            margin: 0 0 7px;
+            color: #fff;
+            font-family: "Oswald", sans-serif;
+            font-size: 15px;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        .kage-topbar span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .kage-topbar .brand-box h1 {
+            margin: 0;
+            color: #fff;
+            font-family: "Oswald", sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .kage-topbar a {
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .kage-nav {
+            background: rgba(8, 8, 8, .96) !important;
+            border-bottom: 1px solid var(--line);
+            min-height: 66px;
+            padding: 0 !important;
+        }
+
+        .kage-nav .navbar-brand {
+            color: #fff;
+            font-family: "Oswald", sans-serif;
+            letter-spacing: .08em;
+        }
+
+        .kage-nav .navbar-brand i {
+            color: var(--orange);
+        }
+
+        .kage-nav .nav-link {
+            color: #aaa39a !important;
+            font-family: "Oswald", sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+            padding: 25px 16px !important;
+            transition: .25s ease;
+        }
+
+        .kage-nav .nav-link:hover,
+        .kage-nav .nav-link.active {
+            color: #fff !important;
+            background: rgba(242, 140, 24, .08);
+        }
+
+        .kage-nav .nav-link.active {
+            box-shadow: inset 0 -2px 0 var(--orange);
+        }
+
+        .kage-nav .navbar-toggler {
+            border-color: rgba(255,255,255,.2);
+        }
+
+        /* =========================
+           MOBILE BRAND
+        ========================= */
+
+        .mobile-brand {
+            color: #fff !important;
+            font-family: "Oswald", sans-serif;
+            letter-spacing: .08em;
+        }
+
+        .mobile-brand i {
+            color: var(--orange);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .kage-hero {
+            position: relative;
+            min-height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 90px 20px;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 25%,
+                    rgba(242, 140, 24, .13),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    180deg,
+                    #181614 0%,
+                    #090909 100%
+                );
+        }
+
+        .kage-hero::before {
+            content: "CONTACT / 06";
+            position: absolute;
+            top: 28px;
+            left: 5%;
+            color: rgba(241,237,228,.35);
+            font-family: "Oswald", sans-serif;
+            font-size: 11px;
+            letter-spacing: .25em;
+        }
+
+        .kage-hero::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 90px;
+            background: var(--orange);
+            bottom: 0;
+            left: 50%;
+        }
+
+        .kage-hero h1 {
+            position: relative;
+            z-index: 2;
+            margin: 0 0 25px;
+            color: #fff;
+            font-family: "Oswald", sans-serif;
+            font-size: clamp(55px, 9vw, 110px);
+            font-weight: 700;
+            line-height: .9;
+            letter-spacing: .025em;
+            text-transform: uppercase;
+        }
+
+        .kage-breadcrumb {
+            position: relative;
+            z-index: 2;
+        }
+
+        .kage-breadcrumb a {
+            color: #aaa39a;
+            text-decoration: none;
+        }
+
+        .kage-breadcrumb a:hover {
+            color: #fff;
+        }
+
+        .kage-breadcrumb i {
+            color: var(--orange);
+            margin: 0 10px;
+        }
+
+        /* =========================
+           MAIN CONTACT SECTION
+        ========================= */
+
+        .kage-contact {
+            background: var(--ink);
+            padding: 100px 20px 120px;
+        }
+
+        .kage-contact-container {
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        /* =========================
+           INFORMATION CARDS
+        ========================= */
+
+        .kage-info-card {
+            height: 100%;
+            min-height: 250px;
+            padding: 45px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1a1816,
+                    #0d0d0d
+                );
+
+            border: 1px solid var(--line);
+            border-left: 3px solid var(--orange);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                background .3s ease;
+        }
+
+        .kage-info-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(242,140,24,.6);
+            background:
+                linear-gradient(
+                    145deg,
+                    #211e1a,
+                    #101010
+                );
+        }
+
+        .kage-info-card i {
+            color: var(--orange);
+            font-size: 40px;
+            margin-bottom: 22px;
+        }
+
+        .kage-info-card h6 {
+            margin-bottom: 14px;
+            color: var(--bone);
+            font-family: "Oswald", sans-serif;
+            font-size: 17px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .kage-info-card span {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           FORM TITLE
+        ========================= */
+
+        .kage-form-heading {
+            margin: 90px auto 45px;
+            text-align: center;
+        }
+
+        .kage-form-heading h2 {
+            margin-bottom: 15px;
+            color: var(--orange);
+            font-family: "Oswald", sans-serif;
+            font-size: 15px;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+        }
+
+        .kage-form-heading h1 {
+            margin: 0;
+            color: var(--bone);
+            font-family: "Oswald", sans-serif;
+            font-size: clamp(42px, 6vw, 76px);
+            font-weight: 700;
+            line-height: .95;
+            text-transform: uppercase;
+        }
+
+        .kage-form-heading p {
+            max-width: 650px;
+            margin: 20px auto 0;
+            color: var(--muted);
+        }
+
+        /* =========================
+           CONTACT FORM
+           FORM FUNCTIONALITY SAME
+        ========================= */
+
+        .kage-form {
+            max-width: 850px;
+            margin: auto;
+            padding: 40px;
+
+            background: #11100f;
+            border: 1px solid var(--line);
+        }
+
+        .kage-form .form-control {
+            height: 55px;
+            background: #080808 !important;
+            color: var(--bone) !important;
+            border: 1px solid rgba(241,237,228,.15) !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+
+        .kage-form textarea.form-control {
+            height: auto;
+            min-height: 150px;
+        }
+
+        .kage-form .form-control::placeholder {
+            color: #77716a !important;
+        }
+
+        .kage-form .form-control:focus {
+            border-color: var(--orange) !important;
+        }
+
+        .kage-form .btn-primary {
+            min-height: 58px;
+            background: var(--orange) !important;
+            border: 1px solid var(--orange) !important;
+            border-radius: 0 !important;
+            color: #111 !important;
+
+            font-family: "Oswald", sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .kage-form .btn-primary:hover {
+            background: var(--orange-light) !important;
+            border-color: var(--orange-light) !important;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .kage-footer {
+            background:
+                linear-gradient(
+                    180deg,
+                    #11100f,
+                    #070707
+                );
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            padding-top: 70px;
+        }
+
+        .kage-footer-brand {
+            height: 100%;
+            padding: 40px 30px;
+            background: var(--orange);
+            color: #fff;
+            text-align: center;
+        }
+
+        .kage-footer-brand h1 {
+            color: #fff;
+            font-family: "Oswald", sans-serif;
+            letter-spacing: .08em;
+        }
+
+        .kage-footer-brand i {
+            color: #111;
+        }
+
+        .kage-footer-brand p {
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        .kage-footer h4 {
+            color: var(--orange);
+            font-family: "Oswald", sans-serif;
+            letter-spacing: .08em;
+        }
+
+        .kage-footer p,
+        .kage-footer a {
+            color: #aaa39a;
+        }
+
+        .kage-footer a {
+            text-decoration: none;
+        }
+
+        .kage-footer a:hover {
+            color: #fff;
+        }
+
+        .kage-footer .footer-icon {
+            color: var(--orange);
+        }
+
+        .kage-copyright {
+            margin-top: 60px;
+            padding: 25px 15px;
+            background: #050505;
+            text-align: center;
+            border-top: 1px solid var(--line);
+        }
+
+        .kage-copyright a {
+            color: #fff;
+        }
+
+        /* =========================
+           BACK TO TOP
+        ========================= */
+
+        .kage-contact-page .back-to-top {
+            background: var(--orange) !important;
+            border-color: var(--orange) !important;
+            color: #111 !important;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .kage-nav {
+                min-height: 65px;
+                padding: 8px 15px !important;
+            }
+
+            .kage-nav .nav-link {
+                padding: 13px 15px !important;
+            }
+
+            .kage-topbar {
+                display: none;
+            }
+
+            .kage-hero {
+                min-height: 280px;
+                padding: 75px 20px;
+            }
+
+            .kage-contact {
+                padding: 70px 18px 90px;
+            }
+
+            .kage-form {
+                padding: 28px 22px;
+            }
+
+            .kage-info-card {
+                min-height: 220px;
+            }
+        }
+
+        @media (max-width: 575px) {
+
+            .kage-hero {
+                min-height: 240px;
+                padding: 65px 15px;
+            }
+
+            .kage-hero h1 {
+                font-size: 48px;
+            }
+
+            .kage-hero::before {
+                left: 20px;
+            }
+
+            .kage-contact {
+                padding: 55px 15px 75px;
+            }
+
+            .kage-info-card {
+                min-height: 205px;
+                padding: 35px 22px;
+            }
+
+            .kage-info-card i {
+                font-size: 34px;
+            }
+
+            .kage-form-heading {
+                margin-top: 65px;
+            }
+
+            .kage-form-heading h1 {
+                font-size: 42px;
+            }
+
+            .kage-form {
+                padding: 20px 15px;
+            }
+
+            .kage-footer {
+                padding-top: 45px;
+            }
+        }
+    </style>
 </head>
 
-<body>
 
-    <!-- Topbar Start -->
-    <div class="container-fluid px-0 d-none d-lg-block">
+<body class="kage-contact-page">
+
+    <!-- =========================
+         TOP CONTACT BAR
+    ========================== -->
+
+    <div class="container-fluid px-0 d-none d-lg-block kage-topbar">
+
         <div class="row gx-0">
 
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
+            <!-- Email -->
+            <div class="col-lg-4 top-item">
 
-                    <i class="bi bi-envelope fs-1 text-primary me-3"></i>
+                <i class="bi bi-envelope"></i>
 
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Email Us</h6>
-                        <span>tajinder5678912@gmail.com</span>
-                    </div>
-
+                <div>
+                    <h6>Email Us</h6>
+                    <span>tajinder5678912@gmail.com</span>
                 </div>
+
             </div>
 
-            <div class="col-lg-4 text-center bg-primary border-inner py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
 
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="m-0 text-uppercase text-white">
-                            <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>
-                            CakeZone
-                        </h1>
-                    </a>
+            <!-- Brand -->
+            <div class="col-lg-4 top-item brand-box">
 
-                </div>
+                <a href="index.html">
+
+                    <h1>
+                        <i class="fa fa-birthday-cake me-3"></i>
+                        CakeZone
+                    </h1>
+
+                </a>
+
             </div>
 
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
 
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+            <!-- Phone -->
+            <div class="col-lg-4 top-item">
 
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Call Us</h6>
-                        <span>+91 7402300022</span>
-                    </div>
+                <i class="bi bi-phone-vibrate"></i>
 
+                <div>
+                    <h6>Call Us</h6>
+                    <span>+91 7402300022</span>
                 </div>
+
             </div>
 
         </div>
+
     </div>
-    <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-white">
-                <i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>
-                CakeZone
-            </h1>
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark kage-nav shadow-sm">
 
-        <button class="navbar-toggler"
+        <div class="container-fluid px-3 px-lg-4">
+
+            <!-- Mobile Brand -->
+
+            <a href="index.html" class="navbar-brand d-block d-lg-none mobile-brand">
+
+                <h1 class="m-0 text-uppercase">
+
+                    <i class="fa fa-birthday-cake me-2"></i>
+                    CakeZone
+
+                </h1>
+
+            </a>
+
+
+            <!-- Mobile Toggle -->
+
+            <button
+                class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
 
-            <div class="navbar-nav ms-auto mx-lg-auto py-0">
+            </button>
 
-                <a href="index.html" class="nav-item nav-link">
-                    Home
-                </a>
 
-                <a href="about.html" class="nav-item nav-link">
-                    About Us
-                </a>
+            <!-- Navigation -->
 
-                <a href="menu.html" class="nav-item nav-link">
-                    Menu & Pricing
-                </a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
 
-                <a href="team.html" class="nav-item nav-link">
-                    Master Chefs
-                </a>
+                <div class="navbar-nav mx-auto">
 
-                <a href="testimonial.html" class="nav-item nav-link">
-                    Testimonials
-                </a>
+                    <a href="index.html" class="nav-item nav-link">
+                        Home
+                    </a>
 
-                <a href="contact.html" class="nav-item nav-link active">
-                    Contact Us
-                </a>
+                    <a href="about.html" class="nav-item nav-link">
+                        About Us
+                    </a>
+
+                    <a href="menu.html" class="nav-item nav-link">
+                        Menu & Pricing
+                    </a>
+
+                    <a href="team.html" class="nav-item nav-link">
+                        Master Chefs
+                    </a>
+
+                    <a href="testimonial.html" class="nav-item nav-link">
+                        Testimonials
+                    </a>
+
+                    <a href="contact.html" class="nav-item nav-link active">
+                        Contact Us
+                    </a>
+
+                </div>
 
             </div>
 
         </div>
+
     </nav>
-    <!-- Navbar End -->
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-dark bg-img p-5 mb-5">
+    <!-- =========================
+         KAGE HERO
+    ========================== -->
 
-        <div class="row">
+    <section class="kage-hero">
 
-            <div class="col-12 text-center">
+        <div>
 
-                <h1 class="display-4 text-uppercase text-white">
-                    Contact Us
-                </h1>
+            <h1>Contact Us</h1>
+
+            <div class="kage-breadcrumb">
 
                 <a href="index.html">
                     Home
                 </a>
 
-                <i class="far fa-square text-primary px-2"></i>
+                <i class="far fa-square"></i>
 
                 <a href="contact.html">
                     Contact
@@ -157,31 +742,38 @@
             </div>
 
         </div>
-    </div>
-    <!-- Page Header End -->
+
+    </section>
 
 
-    <!-- Contact Start -->
-    <div class="container-fluid contact position-relative px-5"
-         style="margin-top: 90px;">
+    <!-- =========================
+         CONTACT CONTENT
+    ========================== -->
 
-        <div class="container">
+    <main class="kage-contact">
 
-            <!-- Contact Information -->
-            <div class="row g-5 mb-5">
+        <div class="kage-contact-container">
+
+
+            <!-- =========================
+                 CONTACT INFORMATION
+            ========================== -->
+
+            <div class="row g-4">
+
+
+                <!-- Location -->
 
                 <div class="col-lg-4 col-md-6">
 
-                    <div class="bg-primary border-inner text-center text-white p-5">
+                    <div class="kage-info-card">
 
-                        <i class="bi bi-geo-alt fs-1 text-white"></i>
+                        <i class="bi bi-geo-alt"></i>
 
-                        <h6 class="text-uppercase my-2">
-                            Our Location
-                        </h6>
+                        <h6>Our Location</h6>
 
                         <span>
-                            Sapthagiri Layout, Munnekollal,
+                            Sapthagiri Layout, Munnekollal,<br>
                             Marathahalli, Bengaluru, Karnataka
                         </span>
 
@@ -190,15 +782,15 @@
                 </div>
 
 
+                <!-- Email -->
+
                 <div class="col-lg-4 col-md-6">
 
-                    <div class="bg-primary border-inner text-center text-white p-5">
+                    <div class="kage-info-card">
 
-                        <i class="bi bi-envelope-open fs-1 text-white"></i>
+                        <i class="bi bi-envelope-open"></i>
 
-                        <h6 class="text-uppercase my-2">
-                            Email Us
-                        </h6>
+                        <h6>Email Us</h6>
 
                         <span>
                             tajinder5678912@gmail.com
@@ -209,15 +801,15 @@
                 </div>
 
 
+                <!-- Phone -->
+
                 <div class="col-lg-4 col-md-6">
 
-                    <div class="bg-primary border-inner text-center text-white p-5">
+                    <div class="kage-info-card">
 
-                        <i class="bi bi-phone-vibrate fs-1 text-white"></i>
+                        <i class="bi bi-phone-vibrate"></i>
 
-                        <h6 class="text-uppercase my-2">
-                            Call Us
-                        </h6>
+                        <h6>Call Us</h6>
 
                         <span>
                             +91 7402300022
@@ -230,152 +822,185 @@
             </div>
 
 
-            <!-- Contact Form -->
-            <div class="row justify-content-center">
+            <!-- =========================
+                 FORM HEADING
+            ========================== -->
 
-                <div class="col-lg-7">
+            <div class="kage-form-heading">
 
-                    <div class="section-title position-relative text-center mx-auto mb-5 pb-3"
-                         style="max-width: 600px;">
+                <h2>Get In Touch</h2>
 
-                        <h2 class="text-primary font-secondary">
-                            Get In Touch
-                        </h2>
+                <h1>Send Us A Message</h1>
 
-                        <h1 class="display-4 text-uppercase">
-                            Send Us A Message
-                        </h1>
+            </div>
+
+
+            <!-- =========================
+                 CONTACT FORM
+                 SAME FORM SETTINGS
+            ========================== -->
+
+            <form
+                class="kage-form"
+                action="https://formsubmit.co/tajinder5678912@gmail.com"
+                method="POST">
+
+
+                <!-- Email Settings -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New CakeZone Website Enquiry">
+
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="false">
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table">
+
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://tajinder-singh1.github.io/Portfolio/contact.html">
+
+
+                <div class="row g-3">
+
+
+                    <!-- Name -->
+
+                    <div class="col-sm-6">
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="name"
+                            placeholder="Your Name"
+                            required>
 
                     </div>
 
 
-                    <!-- Formspree Contact Form -->
-                    <form action="https://formspree.io/f/mzezoayd"
-                          method="POST">
+                    <!-- Email -->
 
-                        <!-- Email Subject -->
-                        <input type="hidden"
-                               name="_subject"
-                               value="New CakeZone Website Enquiry">
+                    <div class="col-sm-6">
 
-                        <div class="row g-3">
+                        <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            placeholder="Your Email"
+                            required>
 
-                            <!-- Name -->
-                            <div class="col-sm-6">
-
-                                <input type="text"
-                                       class="form-control bg-light border-0 px-4"
-                                       name="name"
-                                       placeholder="Your Name"
-                                       required
-                                       style="height: 55px;">
-
-                            </div>
+                    </div>
 
 
-                            <!-- Email -->
-                            <div class="col-sm-6">
+                    <!-- Phone -->
 
-                                <input type="email"
-                                       class="form-control bg-light border-0 px-4"
-                                       name="email"
-                                       placeholder="Your Email"
-                                       required
-                                       style="height: 55px;">
+                    <div class="col-sm-12">
 
-                            </div>
+                        <input
+                            type="tel"
+                            class="form-control"
+                            name="phone"
+                            placeholder="Your Phone Number"
+                            required>
 
-
-                            <!-- Phone -->
-                            <div class="col-sm-12">
-
-                                <input type="tel"
-                                       class="form-control bg-light border-0 px-4"
-                                       name="phone"
-                                       placeholder="Your Phone Number"
-                                       required
-                                       style="height: 55px;">
-
-                            </div>
+                    </div>
 
 
-                            <!-- Subject -->
-                            <div class="col-sm-12">
+                    <!-- Subject -->
 
-                                <input type="text"
-                                       class="form-control bg-light border-0 px-4"
-                                       name="subject"
-                                       placeholder="Subject"
-                                       required
-                                       style="height: 55px;">
+                    <div class="col-sm-12">
 
-                            </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="subject"
+                            placeholder="Subject"
+                            required>
 
-
-                            <!-- Message -->
-                            <div class="col-sm-12">
-
-                                <textarea class="form-control bg-light border-0 px-4 py-3"
-                                          name="message"
-                                          rows="5"
-                                          placeholder="Write your message here..."
-                                          required></textarea>
-
-                            </div>
+                    </div>
 
 
-                            <!-- Submit -->
-                            <div class="col-sm-12">
+                    <!-- Message -->
 
-                                <button class="btn btn-primary border-inner w-100 py-3"
-                                        type="submit">
+                    <div class="col-sm-12">
 
-                                    <i class="fa fa-paper-plane me-2"></i>
-                                    Send Message
+                        <textarea
+                            class="form-control py-3"
+                            name="message"
+                            rows="5"
+                            placeholder="Write your message here..."
+                            required></textarea>
 
-                                </button>
+                    </div>
 
-                            </div>
 
-                        </div>
+                    <!-- Submit -->
 
-                    </form>
+                    <div class="col-sm-12">
+
+                        <button
+                            class="btn btn-primary w-100 py-3"
+                            type="submit">
+
+                            <i class="fa fa-paper-plane me-2"></i>
+
+                            Send Message
+
+                        </button>
+
+                    </div>
 
                 </div>
 
-            </div>
+            </form>
 
         </div>
-    </div>
-    <!-- Contact End -->
+
+    </main>
 
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark bg-img text-secondary"
-         style="margin-top: 235px;">
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="kage-footer">
 
         <div class="container">
 
             <div class="row gx-5">
 
+
                 <!-- About -->
-                <div class="col-lg-4 col-md-6 mt-lg-n5">
 
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
+                <div class="col-lg-4 col-md-6 mb-5">
 
-                        <a href="index.html" class="navbar-brand">
+                    <div class="kage-footer-brand">
 
-                            <h1 class="m-0 text-uppercase text-white">
-                                <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>
+                        <a href="index.html" class="text-decoration-none">
+
+                            <h1 class="m-0 text-uppercase">
+
+                                <i class="fa fa-birthday-cake me-3"></i>
                                 CakeZone
+
                             </h1>
 
                         </a>
 
-                        <p class="mt-3 text-white">
+                        <p class="mt-3 mb-0">
+
                             Freshly baked birthday, wedding and custom cakes
                             made with quality ingredients and care for every
                             special occasion.
+
                         </p>
 
                     </div>
@@ -383,34 +1008,41 @@
                 </div>
 
 
-                <!-- Contact -->
+                <!-- Footer Content -->
+
                 <div class="col-lg-8 col-md-6">
 
                     <div class="row gx-5">
 
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
 
-                            <h4 class="text-primary text-uppercase mb-4">
+                        <!-- Get In Touch -->
+
+                        <div class="col-lg-4 col-md-12 mb-5">
+
+                            <h4 class="text-uppercase mb-4">
                                 Get In Touch
                             </h4>
 
-                            <div class="d-flex mb-2">
 
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <div class="d-flex mb-3">
+
+                                <i class="bi bi-geo-alt footer-icon me-2"></i>
 
                                 <p class="mb-0">
-                                    Sapthagiri Layout,
-                                    Munnekollal,
-                                    Marathahalli,
+
+                                    Sapthagiri Layout,<br>
+                                    Munnekollal,<br>
+                                    Marathahalli,<br>
                                     Bengaluru, Karnataka
+
                                 </p>
 
                             </div>
 
 
-                            <div class="d-flex mb-2">
+                            <div class="d-flex mb-3">
 
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <i class="bi bi-envelope-open footer-icon me-2"></i>
 
                                 <p class="mb-0">
                                     tajinder5678912@gmail.com
@@ -419,9 +1051,9 @@
                             </div>
 
 
-                            <div class="d-flex mb-2">
+                            <div class="d-flex mb-3">
 
-                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <i class="bi bi-telephone footer-icon me-2"></i>
 
                                 <p class="mb-0">
                                     +91 7402300022
@@ -433,65 +1065,44 @@
 
 
                         <!-- Quick Links -->
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
 
-                            <h4 class="text-primary text-uppercase mb-4">
+                        <div class="col-lg-4 col-md-12 mb-5">
+
+                            <h4 class="text-uppercase mb-4">
                                 Quick Links
                             </h4>
 
-                            <div class="d-flex flex-column justify-content-start">
 
-                                <a class="text-secondary mb-2"
-                                   href="index.html">
+                            <div class="d-flex flex-column">
 
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
+                                <a class="mb-2" href="index.html">
+                                    <i class="bi bi-arrow-right footer-icon me-2"></i>
                                     Home
-
                                 </a>
 
-
-                                <a class="text-secondary mb-2"
-                                   href="about.html">
-
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
+                                <a class="mb-2" href="about.html">
+                                    <i class="bi bi-arrow-right footer-icon me-2"></i>
                                     About Us
-
                                 </a>
 
-
-                                <a class="text-secondary mb-2"
-                                   href="menu.html">
-
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
+                                <a class="mb-2" href="menu.html">
+                                    <i class="bi bi-arrow-right footer-icon me-2"></i>
                                     Menu & Pricing
-
                                 </a>
 
-
-                                <a class="text-secondary mb-2"
-                                   href="team.html">
-
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
+                                <a class="mb-2" href="team.html">
+                                    <i class="bi bi-arrow-right footer-icon me-2"></i>
                                     Master Chefs
-
                                 </a>
 
-
-                                <a class="text-secondary mb-2"
-                                   href="testimonial.html">
-
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
+                                <a class="mb-2" href="testimonial.html">
+                                    <i class="bi bi-arrow-right footer-icon me-2"></i>
                                     Testimonials
-
                                 </a>
 
-
-                                <a class="text-secondary"
-                                   href="contact.html">
-
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>
+                                <a href="contact.html">
+                                    <i class="bi bi-arrow-right footer-icon me-2"></i>
                                     Contact Us
-
                                 </a>
 
                             </div>
@@ -499,10 +1110,11 @@
                         </div>
 
 
-                        <!-- Order -->
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <!-- CakeZone -->
 
-                            <h4 class="text-primary text-uppercase mb-4">
+                        <div class="col-lg-4 col-md-12 mb-5">
+
+                            <h4 class="text-uppercase mb-4">
                                 CakeZone
                             </h4>
 
@@ -511,8 +1123,15 @@
                                 Contact us and tell us what you need.
                             </p>
 
-                            <a href="menu.html"
-                               class="btn btn-primary border-inner py-3 px-4">
+                            <a
+                                href="menu.html"
+                                class="btn btn-primary py-3 px-4"
+                                style="
+                                    background:#f28c18;
+                                    border-color:#f28c18;
+                                    color:#111;
+                                    border-radius:0;
+                                ">
 
                                 View Menu
 
@@ -530,52 +1149,51 @@
 
 
         <!-- Copyright -->
-        <div class="container-fluid text-secondary py-4"
-             style="background: #111111;">
 
-            <div class="container text-center">
+        <div class="kage-copyright">
 
-                <p class="mb-0">
+            <p class="mb-0">
 
-                    &copy; 2026
+                &copy; 2026
 
-                    <a class="text-white border-bottom"
-                       href="index.html">
+                <a href="index.html">
+                    CakeZone
+                </a>.
 
-                        CakeZone
+                All Rights Reserved.
 
-                    </a>.
+                <br>
 
-                    All Rights Reserved.
+                Designed by
 
-                    <br>
+                <span style="color:#fff;">
+                    Tajinder Singh
+                </span>
 
-                    Designed by
-
-                    <span class="text-white">
-                        Tajinder Singh
-                    </span>
-
-                </p>
-
-            </div>
+            </p>
 
         </div>
 
-    </div>
-    <!-- Footer End -->
+    </footer>
 
 
-    <!-- Back to Top -->
-    <a href="#"
-       class="btn btn-primary border-inner py-3 fs-4 back-to-top">
+    <!-- =========================
+         BACK TO TOP
+    ========================== -->
+
+    <a
+        href="#"
+        class="btn btn-primary border-inner py-3 fs-4 back-to-top">
 
         <i class="bi bi-arrow-up"></i>
 
     </a>
 
 
-    <!-- JavaScript Libraries -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -588,7 +1206,7 @@
 
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
+    <!-- Existing Template Javascript -->
     <script src="js/main.js"></script>
 
 </body>
