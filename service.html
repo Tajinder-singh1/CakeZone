@@ -1,390 +1,955 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
+
 <head>
-    <meta charset="utf-8">
-    <title>CakeZone - Cake Shop</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+<style>
+/* ================= KAGE STYLE - CAKEZONE SERVICES ================= */
+:root{
+    --kage-ink:#090909;
+    --kage-ink-soft:#111111;
+    --kage-bone:#f1eadf;
+    --kage-muted:#aaa39a;
+    --kage-red:#d94b32;
+    --kage-line:rgba(241,234,223,.16);
+}
+body.kage-service-page{
+    background:var(--kage-ink)!important;
+    color:var(--kage-bone);
+    font-family:"Open Sans",sans-serif;
+}
+.kage-service-page *{box-sizing:border-box}
+.kage-service-page a{transition:.3s ease}
+.kage-service-page .top-kage{
+    background:#090909!important;
+    border-bottom:1px solid var(--kage-line);
+}
+.kage-service-page .kage-nav{
+    background:rgba(9,9,9,.94)!important;
+    border-bottom:1px solid var(--kage-line);
+    backdrop-filter:blur(16px);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+.kage-service-page .navbar-brand h1{
+    letter-spacing:.08em;
+    font-size:28px;
+}
+.kage-service-page .navbar-nav .nav-link{
+    color:#bdb7ae!important;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:12px;
+    padding:24px 16px!important;
+}
+.kage-service-page .navbar-nav .nav-link:hover,
+.kage-service-page .navbar-nav .nav-link.active{
+    color:var(--kage-red)!important;
+}
+.kage-service-page .dropdown-menu{
+    background:#121212!important;
+    border:1px solid var(--kage-line);
+}
+.kage-service-page .dropdown-item{
+    color:#ddd!important;
+}
+.kage-service-page .dropdown-item:hover,
+.kage-service-page .dropdown-item.active{
+    background:#1d1d1d!important;
+    color:var(--kage-red)!important;
+}
+.kage-service-page .kage-page-hero{
+    position:relative;
+    min-height:68vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 72% 35%,rgba(217,75,50,.20),transparent 26%),
+      radial-gradient(circle at 20% 80%,rgba(255,255,255,.06),transparent 30%),
+      linear-gradient(120deg,#070707,#121212 55%,#090909);
+    border-bottom:1px solid var(--kage-line);
+}
+.kage-page-hero:before{
+    content:"";
+    position:absolute;
+    width:520px;height:520px;
+    right:-160px;top:-170px;
+    border:1px solid rgba(217,75,50,.25);
+    border-radius:50%;
+    box-shadow:0 0 0 70px rgba(217,75,50,.025),
+               0 0 0 140px rgba(217,75,50,.018);
+    animation:kageSpin 24s linear infinite;
+}
+.kage-page-hero:after{
+    content:"CAKEZONE / SERVICES";
+    position:absolute;
+    right:5%;
+    bottom:8%;
+    color:rgba(241,234,223,.14);
+    font:600 12px/1 "Oswald",sans-serif;
+    letter-spacing:.35em;
+}
+.kage-hero-inner{
+    position:relative;
+    z-index:2;
+    width:100%;
+    padding:100px 7%;
+}
+.kage-eyebrow{
+    color:var(--kage-red);
+    font:600 13px/1 "Oswald",sans-serif;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+.kage-hero-title{
+    color:var(--kage-bone)!important;
+    font:700 clamp(60px,11vw,150px)/.84 "Oswald",sans-serif!important;
+    letter-spacing:-.045em;
+    text-transform:uppercase;
+    margin:0;
+}
+.kage-hero-title span{
+    color:transparent;
+    -webkit-text-stroke:1px rgba(241,234,223,.7);
+}
+.kage-hero-sub{
+    max-width:650px;
+    margin:35px 0 0;
+    color:var(--kage-muted);
+    font-size:17px;
+    line-height:1.8;
+}
+.kage-breadcrumb{
+    margin-top:34px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+}
+.kage-breadcrumb a{color:#aaa;text-decoration:none}
+.kage-breadcrumb a:hover{color:var(--kage-red)}
+.kage-breadcrumb .dot{color:var(--kage-red)}
+.kage-services{
+    padding:120px 0;
+    background:#090909;
+}
+.kage-section-head{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    align-items:end;
+    margin-bottom:70px;
+    border-bottom:1px solid var(--kage-line);
+    padding-bottom:35px;
+}
+.kage-section-label{
+    color:var(--kage-red);
+    font:600 12px/1 "Oswald",sans-serif;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+}
+.kage-section-title{
+    color:var(--kage-bone)!important;
+    font:600 clamp(40px,6vw,82px)/.95 "Oswald",sans-serif!important;
+    text-transform:uppercase;
+    margin:14px 0 0;
+    letter-spacing:-.025em;
+}
+.kage-section-note{
+    max-width:390px;
+    color:var(--kage-muted);
+    line-height:1.8;
+    margin:0;
+}
+.kage-service-card{
+    position:relative;
+    height:100%;
+    min-height:440px;
+    padding:48px 38px 42px;
+    background:linear-gradient(145deg,#151515,#0d0d0d);
+    border:1px solid var(--kage-line);
+    overflow:hidden;
+    transition:transform .45s ease,border-color .45s ease,background .45s ease;
+}
+.kage-service-card:before{
+    content:"";
+    position:absolute;
+    width:180px;height:180px;
+    right:-90px;top:-90px;
+    border:1px solid rgba(217,75,50,.35);
+    border-radius:50%;
+    transition:transform .6s ease;
+}
+.kage-service-card:after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    width:100%;height:3px;
+    background:var(--kage-red);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .45s ease;
+}
+.kage-service-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(217,75,50,.5);
+    background:linear-gradient(145deg,#191919,#0c0c0c);
+}
+.kage-service-card:hover:before{transform:scale(1.5)}
+.kage-service-card:hover:after{transform:scaleX(1)}
+.kage-card-number{
+    color:rgba(241,234,223,.2);
+    font:600 12px/1 "Oswald",sans-serif;
+    letter-spacing:.25em;
+    margin-bottom:45px;
+}
+.kage-card-icon{
+    width:72px;height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(217,75,50,.45);
+    color:var(--kage-red);
+    font-size:28px;
+    margin-bottom:30px;
+}
+.kage-service-card h3{
+    color:var(--kage-bone)!important;
+    font:600 32px/1 "Oswald",sans-serif!important;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    margin-bottom:22px;
+}
+.kage-service-card p{
+    color:var(--kage-muted);
+    line-height:1.8;
+    margin-bottom:18px;
+}
+.kage-price{
+    color:var(--kage-red);
+    font:600 18px "Oswald",sans-serif;
+}
+.kage-card-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:28px;
+    color:var(--kage-bone)!important;
+    text-decoration:none;
+    text-transform:uppercase;
+    font:600 11px "Oswald",sans-serif;
+    letter-spacing:.18em;
+}
+.kage-card-link:hover{color:var(--kage-red)!important;gap:16px}
+.kage-offer{
+    position:relative;
+    overflow:hidden;
+    padding:95px 0;
+    background:
+      linear-gradient(90deg,rgba(217,75,50,.94),rgba(130,35,25,.88)),
+      #8b2519;
+}
+.kage-offer:before{
+    content:"30%";
+    position:absolute;
+    right:4%;
+    top:-55px;
+    color:rgba(0,0,0,.10);
+    font:700 240px/.8 "Oswald",sans-serif;
+}
+.kage-offer h2{
+    color:#fff!important;
+    font:600 clamp(38px,6vw,75px)/.95 "Oswald",sans-serif!important;
+    text-transform:uppercase;
+    margin-bottom:22px;
+}
+.kage-offer p{
+    color:rgba(255,255,255,.82);
+    max-width:650px;
+    line-height:1.8;
+}
+.kage-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 28px;
+    margin:18px 12px 0 0;
+    border:1px solid rgba(255,255,255,.45);
+    color:#fff!important;
+    text-decoration:none;
+    text-transform:uppercase;
+    font:600 12px "Oswald",sans-serif;
+    letter-spacing:.16em;
+    background:transparent;
+}
+.kage-btn:hover{background:#fff;color:#111!important}
+.kage-btn.dark{background:#111;border-color:#111}
+.kage-footer{
+    background:#070707!important;
+    border-top:1px solid var(--kage-line);
+}
+.kage-footer .bg-primary{
+    background:#141414!important;
+    border:1px solid var(--kage-line)!important;
+}
+.kage-footer h4{font-family:"Oswald",sans-serif!important;letter-spacing:.1em}
+.kage-footer p,.kage-footer a{color:#999!important}
+.kage-footer a:hover{color:var(--kage-red)!important}
+.kage-footer .text-primary{color:var(--kage-red)!important}
+.kage-footer .btn-primary{
+    background:var(--kage-red)!important;
+    border-color:var(--kage-red)!important;
+    color:#fff!important;
+}
+.kage-service-page .back-to-top{
+    background:var(--kage-red)!important;
+    border:0!important;
+}
+@keyframes kageSpin{to{transform:rotate(360deg)}}
+@media(max-width:991px){
+    .kage-service-page .navbar-nav .nav-link{padding:14px 16px!important}
+    .kage-page-hero{min-height:58vh!important}
+    .kage-hero-inner{padding:80px 7%}
+    .kage-section-head{display:block}
+    .kage-section-note{margin-top:25px}
+}
+@media(max-width:575px){
+    .kage-page-hero{min-height:65vh!important}
+    .kage-hero-title{font-size:58px!important}
+    .kage-hero-sub{font-size:15px}
+    .kage-services{padding:80px 0}
+    .kage-service-card{min-height:auto;padding:38px 28px}
+    .kage-service-card h3{font-size:28px!important}
+    .kage-offer{padding:75px 0}
+    .kage-offer:before{font-size:150px}
+}
+</style>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <title>CakeZone - Cake Shop</title>
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta content="Free HTML Templates" name="keywords">
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <meta content="Free HTML Templates" name="description">
+
+
+
+    <!-- Favicon -->
+
+    <link href="img/favicon.ico" rel="icon">
+
+
+
+    <!-- Google Web Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+
+
+    <!-- Icon Font Stylesheet -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+
+
+    <!-- Libraries Stylesheet -->
+
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <!-- Template Stylesheet -->
+
+    <link href="css/style.css" rel="stylesheet">
+
 </head>
 
-<body>
 
-    <!-- Topbar Start -->
-    <div class="container-fluid px-0 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <i class="bi bi-envelope fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Email Us</h6>
-                        <span>tajinder5678912@gmail.com</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 text-center bg-primary border-inner py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="m-0 text-uppercase text-white">
-                            <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>CakeZone
-                        </h1>
-                    </a>
-                </div>
-            </div>
+<body class="kage-service-page">
 
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Call Us</h6>
-                        <span>+91 7402300022</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+    <!-- Topbar Start -->
+
+    <div class="container-fluid px-0 d-none d-lg-block">
+
+        <div class="row gx-0">
+
+            <div class="col-lg-4 text-center bg-secondary py-3">
+
+                <div class="d-inline-flex align-items-center justify-content-center">
+
+                    <i class="bi bi-envelope fs-1 text-primary me-3"></i>
+
+                    <div class="text-start">
+
+                        <h6 class="text-uppercase mb-1">Email Us</h6>
+
+                        <span>tajinder5678912@gmail.com</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 text-center bg-primary border-inner py-3">
+
+                <div class="d-inline-flex align-items-center justify-content-center">
+
+                    <a href="index.html" class="navbar-brand">
+
+                        <h1 class="m-0 text-uppercase text-white">
+
+                            <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>CakeZone
+
+                        </h1>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-4 text-center bg-secondary py-3">
+
+                <div class="d-inline-flex align-items-center justify-content-center">
+
+                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+
+                    <div class="text-start">
+
+                        <h6 class="text-uppercase mb-1">Call Us</h6>
+
+                        <span>+91 7402300022</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Topbar End -->
+
+
+
+
+
+    <!-- Navbar Start -->
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+
+            <h1 class="m-0 text-uppercase text-white">
+
+                <i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone
+
+            </h1>
+
+        </a>
+
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <div class="navbar-nav ms-auto mx-lg-auto py-0">
+
+                <a href="index.html" class="nav-item nav-link">Home</a>
+
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+
+                <a href="menu.html" class="nav-item nav-link">Menu & Pricing</a>
+
+                <a href="team.html" class="nav-item nav-link">Master Chefs</a>
+
+
+
+                <div class="nav-item dropdown">
+
+                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+
+                    <div class="dropdown-menu m-0">
+
+                        <a href="service.html" class="dropdown-item active">Our Service</a>
+
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+
+                    </div>
+
+                </div>
+
+
+
+                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- Navbar End -->
+
+
+
+
+
+    <!-- Kage Page Hero -->
+<section class="kage-page-hero">
+  <div class="kage-hero-inner">
+    <div class="kage-eyebrow">CakeZone / What We Create</div>
+    <h1 class="kage-hero-title">Our <span>Services</span></h1>
+    <p class="kage-hero-sub">Freshly baked cakes, elegant wedding creations and personalised designs made for birthdays, celebrations and every special occasion.</p>
+    <div class="kage-breadcrumb">
+      <a href="index.html">Home</a><span class="dot">◆</span><a href="service.html">Services</a>
     </div>
-    <!-- Topbar End -->
+  </div>
+</section>
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-white">
-                <i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone
-            </h1>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto mx-lg-auto py-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About Us</a>
-                <a href="menu.html" class="nav-item nav-link">Menu & Pricing</a>
-                <a href="team.html" class="nav-item nav-link">Master Chefs</a>
-
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="service.html" class="dropdown-item active">Our Service</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                    </div>
-                </div>
-
-                <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
 
 
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-dark bg-img p-5 mb-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="display-4 text-uppercase text-white">Services</h1>
-                <a href="index.html">Home</a>
-                <i class="far fa-square text-primary px-2"></i>
-                <a href="service.html">Services</a>
-            </div>
-        </div>
+
+    <!-- Kage Services -->
+<section class="kage-services">
+  <div class="container">
+    <div class="kage-section-head">
+      <div>
+        <div class="kage-section-label">01 — Our Services</div>
+        <h2 class="kage-section-title">Made For Your<br>Special Moments</h2>
+      </div>
+      <p class="kage-section-note">From classic birthday cakes to statement wedding creations and fully customised designs, CakeZone creates cakes around your celebration, flavour and vision.</p>
     </div>
-    <!-- Page Header End -->
-
-
-    <!-- Service Start -->
-    <div class="container-fluid service position-relative px-5" style="margin-top: 90px;">
-        <div class="container">
-            <div class="row g-5">
-
-                <!-- Birthday Cake Service -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <i class="fa fa-birthday-cake fa-3x text-dark mb-4"></i>
-
-                        <h4 class="text-uppercase mb-3">Birthday Cake</h4>
-
-                        <p>
-                            Celebrate birthdays with freshly baked cakes made in your favourite flavours.
-                            Choose from Chocolate Truffle, Classic Vanilla, Black Forest, Red Velvet,
-                            Butterscotch and Fresh Strawberry cakes. Birthday cakes start from
-                            <strong>₹299</strong>.
-                        </p>
-
-                        <p class="mb-0">
-                            Perfect for kids, family celebrations and birthday parties.
-                        </p>
-
-                        <a class="text-uppercase text-dark" href="menu.html">
-                            View Birthday Cakes
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-
-                <!-- Wedding Cake Service -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <i class="fa fa-heart fa-3x text-dark mb-4"></i>
-
-                        <h4 class="text-uppercase mb-3">Wedding Cake</h4>
-
-                        <p>
-                            Make your special day memorable with elegant multi-layer and designer
-                            wedding cakes. We offer Classic Wedding, Red Velvet Wedding, Premium
-                            Chocolate, Floral, Designer and Royal Celebration cakes.
-                        </p>
-
-                        <p class="mb-0">
-                            Wedding cakes start from <strong>₹1,499</strong> and can be customised
-                            according to the event, size and design.
-                        </p>
-
-                        <a class="text-uppercase text-dark" href="menu.html">
-                            View Wedding Cakes
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-
-                <!-- Custom Cake Service -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <i class="fa fa-paint-brush fa-3x text-dark mb-4"></i>
-
-                        <h4 class="text-uppercase mb-3">Custom Cake</h4>
-
-                        <p>
-                            Create a cake designed exactly for your occasion. Choose your preferred
-                            flavour, colour, theme, photo, shape and decoration. We create Photo Cakes,
-                            Theme Cakes, Designer Cakes and fully customised cakes.
-                        </p>
-
-                        <p class="mb-0">
-                            Custom cakes start from <strong>₹599</strong>. Final price depends on
-                            flavour, size, design and level of customisation.
-                        </p>
-
-                        <a class="text-uppercase text-dark" href="menu.html">
-                            Customise Your Cake
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-
-                <!-- Offer -->
-                <div class="col-lg-12 col-md-6 text-center">
-                    <h1 class="text-uppercase text-light mb-4">
-                        30% Discount For This Summer
-                    </h1>
-
-                    <a href="contact.html" class="btn btn-primary border-inner py-3 px-5">
-                        Order Now
-                    </a>
-                </div>
-
-            </div>
-        </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <article class="kage-service-card">
+          <div class="kage-card-number">SERVICE / 01</div>
+          <div class="kage-card-icon"><i class="fa fa-birthday-cake"></i></div>
+          <h3>Birthday Cake</h3>
+          <p>Celebrate birthdays with freshly baked cakes made in your favourite flavours. Choose from Chocolate Truffle, Classic Vanilla, Black Forest, Red Velvet, Butterscotch and Fresh Strawberry cakes.</p>
+          <p class="kage-price">Starting from ₹299</p>
+          <p>Perfect for kids, family celebrations and birthday parties.</p>
+          <a class="kage-card-link" href="menu.html">View Birthday Cakes <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <article class="kage-service-card">
+          <div class="kage-card-number">SERVICE / 02</div>
+          <div class="kage-card-icon"><i class="fa fa-heart"></i></div>
+          <h3>Wedding Cake</h3>
+          <p>Make your special day memorable with elegant multi-layer and designer wedding cakes. We offer Classic Wedding, Red Velvet Wedding, Premium Chocolate, Floral, Designer and Royal Celebration cakes.</p>
+          <p class="kage-price">Starting from ₹1,499</p>
+          <p>Customised according to the event, size and design.</p>
+          <a class="kage-card-link" href="menu.html">View Wedding Cakes <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <article class="kage-service-card">
+          <div class="kage-card-number">SERVICE / 03</div>
+          <div class="kage-card-icon"><i class="fa fa-paint-brush"></i></div>
+          <h3>Custom Cake</h3>
+          <p>Create a cake designed exactly for your occasion. Choose your preferred flavour, colour, theme, photo, shape and decoration. We create Photo Cakes, Theme Cakes, Designer Cakes and fully customised cakes.</p>
+          <p class="kage-price">Starting from ₹599</p>
+          <p>Final price depends on flavour, size, design and level of customisation.</p>
+          <a class="kage-card-link" href="menu.html">Customise Your Cake <i class="bi bi-arrow-right"></i></a>
+        </article>
+      </div>
     </div>
-    <!-- Service End -->
+  </div>
+</section>
+<section class="kage-offer">
+  <div class="container position-relative">
+    <div class="kage-section-label" style="color:#fff;">04 — Seasonal Offer</div>
+    <h2>30% Discount For<br>This Summer</h2>
+    <p>Celebrate your special moments with CakeZone. Choose from birthday, wedding and fully customised cakes made for your occasion.</p>
+    <a href="contact.html" class="kage-btn">Order Now</a>
+    <a href="menu.html" class="kage-btn dark">Explore Menu</a>
+  </div>
+</section>
 
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark bg-img text-secondary" style="margin-top: 235px">
-        <div class="container">
-            <div class="row gx-5">
-
-                <div class="col-lg-4 col-md-6 mt-lg-n5">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
-
-                        <a href="index.html" class="navbar-brand">
-                            <h1 class="m-0 text-uppercase text-white">
-                                <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>CakeZone
-                            </h1>
-                        </a>
-
-                        <p class="mt-3">
-                            Freshly baked cakes for birthdays, weddings and special occasions.
-                            CakeZone offers delicious flavours, beautiful designs and custom cakes
-                            made according to your celebration.
-                        </p>
-
-                    </div>
-                </div>
 
 
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
 
-                        <!-- Contact -->
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <h4 class="text-primary text-uppercase mb-4">Get In Touch</h4>
+    <!-- Footer Start -->
 
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">
-                                    Sapthagiri Layout, Munnekollal, Marathahalli, Bengaluru, Karnataka
-                                </p>
-                            </div>
+    <div class="container-fluid bg-dark bg-img text-secondary kage-footer" style="margin-top: 100px">
 
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">tajinder5678912@gmail.com</p>
-                            </div>
+        <div class="container">
 
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-telephone text-primary me-2"></i>
-                                <p class="mb-0">+91 7402300022</p>
-                            </div>
-
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
-                                    <i class="fab fa-twitter fw-normal"></i>
-                                </a>
-
-                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
-                                    <i class="fab fa-facebook-f fw-normal"></i>
-                                </a>
-
-                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
-                                    <i class="fab fa-linkedin-in fw-normal"></i>
-                                </a>
-                            </div>
-                        </div>
+            <div class="row gx-5">
 
 
-                        <!-- Quick Links -->
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <h4 class="text-primary text-uppercase mb-4">Quick Links</h4>
 
-                            <div class="d-flex flex-column justify-content-start">
+                <div class="col-lg-4 col-md-6 mt-lg-n5">
 
-                                <a class="text-secondary mb-2" href="index.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>Home
-                                </a>
-
-                                <a class="text-secondary mb-2" href="about.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>About Us
-                                </a>
-
-                                <a class="text-secondary mb-2" href="service.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>Our Services
-                                </a>
-
-                                <a class="text-secondary mb-2" href="team.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team
-                                </a>
-
-                                <a class="text-secondary mb-2" href="menu.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>Menu & Pricing
-                                </a>
-
-                                <a class="text-secondary" href="contact.html">
-                                    <i class="bi bi-arrow-right text-primary me-2"></i>Contact Us
-                                </a>
-
-                            </div>
-                        </div>
+                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
 
 
-                        <!-- Newsletter -->
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <h4 class="text-primary text-uppercase mb-4">Newsletter</h4>
 
-                            <p>
-                                Get updates about new cake flavours, special offers and custom cake
-                                collections from CakeZone.
-                            </p>
+                        <a href="index.html" class="navbar-brand">
 
-                            <form action="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control border-white p-3"
-                                        placeholder="Your Email">
+                            <h1 class="m-0 text-uppercase text-white">
 
-                                    <button class="btn btn-primary">
-                                        Sign Up
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                                <i class="fa fa-birthday-cake fs-1 text-dark me-3"></i>CakeZone
 
-                    </div>
-                </div>
+                            </h1>
 
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+                        </a>
 
 
-    <div class="container-fluid text-secondary py-4" style="background: #111111;">
-        <div class="container text-center">
 
-            <p class="mb-0">
-                &copy;
-                <a class="text-white border-bottom" href="#">
-                    CakeZone
-                </a>.
-                All Rights Reserved.
+                        <p class="mt-3">
 
-                <!-- *** The author's attribution link must remain intact in the template. *** -->
-                <!-- *** If you wish to remove this credit link, please purchase the Pro Version . *** -->
+                            Freshly baked cakes for birthdays, weddings and special occasions.
 
-                Designed by
-                <a class="text-white border-bottom" href="https://htmlcodex.com">
-                    HTML Codex
-                </a>
-            </p>
+                            CakeZone offers delicious flavours, beautiful designs and custom cakes
 
-        </div>
-    </div>
+                            made according to your celebration.
+
+                        </p>
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </a>
+
+                    </div>
+
+                </div>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+
+
+                <div class="col-lg-8 col-md-6">
+
+                    <div class="row gx-5">
+
+
+
+                        <!-- Contact -->
+
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+
+                            <h4 class="text-primary text-uppercase mb-4">Get In Touch</h4>
+
+
+
+                            <div class="d-flex mb-2">
+
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+
+                                <p class="mb-0">
+
+                                    Sapthagiri Layout, Munnekollal, Marathahalli, Bengaluru, Karnataka
+
+                                </p>
+
+                            </div>
+
+
+
+                            <div class="d-flex mb-2">
+
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+
+                                <p class="mb-0">tajinder5678912@gmail.com</p>
+
+                            </div>
+
+
+
+                            <div class="d-flex mb-2">
+
+                                <i class="bi bi-telephone text-primary me-2"></i>
+
+                                <p class="mb-0">+91 7402300022</p>
+
+                            </div>
+
+
+
+                            <div class="d-flex mt-4">
+
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
+
+                                    <i class="fab fa-twitter fw-normal"></i>
+
+                                </a>
+
+
+
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
+
+                                    <i class="fab fa-facebook-f fw-normal"></i>
+
+                                </a>
+
+
+
+                                <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
+
+                                    <i class="fab fa-linkedin-in fw-normal"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <!-- Quick Links -->
+
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+
+                            <h4 class="text-primary text-uppercase mb-4">Quick Links</h4>
+
+
+
+                            <div class="d-flex flex-column justify-content-start">
+
+
+
+                                <a class="text-secondary mb-2" href="index.html">
+
+                                    <i class="bi bi-arrow-right text-primary me-2"></i>Home
+
+                                </a>
+
+
+
+                                <a class="text-secondary mb-2" href="about.html">
+
+                                    <i class="bi bi-arrow-right text-primary me-2"></i>About Us
+
+                                </a>
+
+
+
+                                <a class="text-secondary mb-2" href="service.html">
+
+                                    <i class="bi bi-arrow-right text-primary me-2"></i>Our Services
+
+                                </a>
+
+
+
+                                <a class="text-secondary mb-2" href="team.html">
+
+                                    <i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team
+
+                                </a>
+
+
+
+                                <a class="text-secondary mb-2" href="menu.html">
+
+                                    <i class="bi bi-arrow-right text-primary me-2"></i>Menu & Pricing
+
+                                </a>
+
+
+
+                                <a class="text-secondary" href="contact.html">
+
+                                    <i class="bi bi-arrow-right text-primary me-2"></i>Contact Us
+
+                                </a>
+
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <!-- Newsletter -->
+
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+
+                            <h4 class="text-primary text-uppercase mb-4">Newsletter</h4>
+
+
+
+                            <p>
+
+                                Get updates about new cake flavours, special offers and custom cake
+
+                                collections from CakeZone.
+
+                            </p>
+
+
+
+                            <form action="">
+
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control border-white p-3"
+
+                                        placeholder="Your Email">
+
+
+
+                                    <button class="btn btn-primary">
+
+                                        Sign Up
+
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer End -->
+
+
+
+
+
+    <div class="container-fluid text-secondary py-4" style="background: #111111;">
+
+        <div class="container text-center">
+
+
+
+            <p class="mb-0">
+
+                &copy;
+
+                <a class="text-white border-bottom" href="#">
+
+                    CakeZone
+
+                </a>.
+
+                All Rights Reserved.
+
+
+
+                <!-- *** The author's attribution link must remain intact in the template. *** -->
+
+                <!-- *** If you wish to remove this credit link, please purchase the Pro Version . *** -->
+
+
+
+                Designed by
+
+                <a class="text-white border-bottom" href="https://htmlcodex.com">
+
+                    HTML Codex
+
+                </a>
+
+            </p>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Back to Top -->
+
+    <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top">
+
+        <i class="bi bi-arrow-up"></i>
+
+    </a>
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="lib/easing/easing.min.js"></script>
+
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+
+    <!-- Template Javascript -->
+
+    <script src="js/main.js"></script>
+
+
 
 </body>
+
+
 
 </html>
