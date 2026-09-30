@@ -1121,3 +1121,36 @@ svg {
         overflow: visible;
     }
 }
+.cakezone-mobile-banner-ad {
+    width: 320px;
+    min-width: 320px;
+}
+
+.cakezone-mobile-banner-container {
+    width: 320px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.cakezone-mobile-banner-container iframe {
+    width: 320px !important;
+    height: 50px !important;
+    max-width: 320px !important;
+    border: 0 !important;
+    display: block;
+}
+
+@media (max-width: 380px) {
+    .cakezone-mobile-banner-ad {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .cakezone-mobile-banner-container {
+        width: 320px;
+        max-width: 100vw;
+    }
+}
